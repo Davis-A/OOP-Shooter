@@ -1,0 +1,115 @@
+Questions:
+
+Where should i spawn enemies?  Design question.
+	Factory.  Static interface.  Spawn phase 1 enemy, spawn phase 2 enemy
+
+	Have something deal with time.
+
+
+
+
+How would i do a quasi random spawn:
+	Static timeobject for timekeeping (singleton pattern)
+	The time object handles timing, it tells factory what to spawn.  ie the timeobject knows to spawn 4 enemies in phase 1.
+	Time object in main.  Has a method to tick each cycle, use the tick to measure time
+
+	Timing.
+	After x seconds Spawn lvl1,
+	After y seconds Spawn lvl2,
+	maybe frame numbers?	
+
+
+
+How to do collisions?
+	physics manager
+
+
+__________
+	gamemanager
+		create singletons
+		HandleInput (invoke objects to handle their input ie player)
+		Update (tell all objects to update() -- during update it has a 
+		Render Tell all objects to render.
+		
+singletons:
+	during update it has a HandleCollisions methods 
+	Collision manager (is passed all gameobjects by GameManager)
+	time man
+	factory
+	graphics manager
+
+class physics
+	private TimeManager _timeman;
+	private factory _factory;
+
+
+
+__________________________________-
+
+When the Time manager tells factory to spawn an enemy.  Does the factory put it into the list of enemies, OR does the factory return the enemy to put into the list of enemeies?  Thus the heart of this question is which of the singletons have a reference to the list of enemies.
+
+PhysicsManager needs a method to allow the factory to add an enemy to it.
+
+Collision.  Create a boundry box.  Ie if the ship is at 50,50.  Swingame has SwinGame.RectanglesIntersect()
+_____________
+
+TODO:
+Create Game Manager						--------done
+game manager needs interface to add enemies			--------done
+Create factory to make enemies - call enemy constructor		--------done
+Process Input for player (add delta movement)
+Player needs new Update()
+Enemy needs a DeltaY.
+Change Player Update to just process the deltas
+GameManager calls process inputs
+GameManager invokes updates
+	- tell all objects to mvoe based on deltas
+	- Physics manager - to give it ALL gameobjects - check collisions inside update
+
+
+Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobjects.
+	future need to query player for things like life.
+Bounding boxes.  
+Enemy Updates need List from below:
+
+_______________
+ProcessInput for player:
+	deltaX = 0; deltaY = 0;
+	if (wkey down)
+		deltaY = deltaY - speed;
+	if (skey down)
+		deltaY = deltaY + speed;
+
+
+______
+Enemy	
+	lifetime integer
+	struct DeltaX/Y {dx, dy}
+	List of DeltaX/Y
+	Each update, increment lifetime
+	when lifetime hits 100 (arbitrary value)
+	If (arbitrary value)
+		tempdelta = dxdyList.remove();
+		deltaX = tempdelta.x
+		deltaY = tempdelta.Y
+
+	Each update increment lifetime
+	when lifetime hits 100 change dxdy to next dictionary item.
+
+
+____________
+Despawn
+	Enemy
+		if (X < 0-ScreenWidth()) || (X > (ScreenWidth()) * 2 )) || (Y < 0-ScreenHeight()) || (Y > ScreenWidth() *2)  THEN Despawn()
+
+	Bullet
+		if (X < 0-Radius) || (X > ScreenWidth() + Radius) || (Y < 0-Radius) || (Y > ScreenHeight()+Radius) THEN Despawn()
+
+
+
+	
+	
+
+
+
+
