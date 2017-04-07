@@ -10,7 +10,7 @@ namespace MyGame
 
 		public Factory (GameManager world)
 		{
-			if (_instance != null) 
+			if (_instance == null) 
 			{
 				//load enemy bitmap
 				_enemybitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
@@ -23,10 +23,10 @@ namespace MyGame
 			}
 		}
 
-		public void BuildEnemy (int hp, float x, float y, float deltaX) 
+		public void BuildEnemy (int hp, float x, float y, float deltaX, float deltaY) 
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			_world.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaX));
+			_world.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaX, deltaY));
 		}
 
 		public static Factory Instance 

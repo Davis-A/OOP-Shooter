@@ -14,7 +14,7 @@ namespace MyGame
 		//gameobject lists
 		private List<Bullet> _bullets;
 		private List<Enemy> _enemies;
-		private Player _p1;
+		//private Player _p1;
 
 
 

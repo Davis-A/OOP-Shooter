@@ -7,7 +7,7 @@ namespace MyGame
 
 		public GraphicsManager ()
 		{
-			if (_instance != null) 
+			if (_instance == null) 
 			{
 				_instance = this;
 			} 

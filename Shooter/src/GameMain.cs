@@ -6,78 +6,30 @@ namespace MyGame
 {
     public class GameMain
     {
-
-
-
-        public static void Main()
+		public static void Main()
         {
+			
 
-			/*
-			 * setup Mytesting
-			 */
-			List<GameObject> AllObjects = new List<GameObject> ();
-			//create an enemy ship
-			//AllObjects.Add (new Enemy (1, @"sprites\enemy.png", 800f, 300f, -2f));
-			//Player p1 = new Player (2, @"sprites\F5S4-small.png", 50f, 50f, new BigGun());
+			GameManager game = new GameManager ();
 
-			//Rectangle myRectangle = new Rectangle ();
-			//myRectangle.
-			//SwinGame.RectanglesIntersect(
-
-
-
-			//--------------------------------------------
-
-
-
-
-
-
-
-			//--------------------------------------------
-
-			/*
-			* end setup
-			*/
-
-
-
-
-            //Open the game window
-            SwinGame.OpenGraphicsWindow("GameMain", 800, 600);
-			//sSwinGame.ShowSwinGameSplashScreen();
+			//Open the game window
+			SwinGame.OpenGraphicsWindow("GameMain", 800, 600);  //does this below in GameManager.Init() ?
 
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) 
 			{
 				//Fetch the next batch of UI interaction
 				SwinGame.ProcessEvents ();
-
 				//Clear the screen and draw the framerate
 				SwinGame.ClearScreen (Color.White);
 
 
-				foreach (GameObject go in AllObjects) 
-				{
-					go.Update ();
-					go.Render ();
-				}
-
-				p1.Update ();
-				p1.Render ();
-
-				if (SwinGame.MouseClicked (MouseButton.LeftButton))
-				{
-					AllObjects.Add (p1.Shoot ());
-				}
-
-				SwinGame.DrawFramerate (0, 0);
 
 
 
+				SwinGame.DrawFramerate (0, 0);  //does this go in GraphicsManager.Render?
 				//Draw onto the screen
-
-				SwinGame.RefreshScreen (60);
+				SwinGame.RefreshScreen (60); //Does this go in GraphicsManger.Render()?
 
 			}
 			SwinGame.ReleaseAllBitmaps ();

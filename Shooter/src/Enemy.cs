@@ -5,13 +5,14 @@ namespace MyGame
 	public class Enemy : Ship
 	{
 
-		public Enemy (int hp, Bitmap sprite, float x, float y, float deltaX) : base (hp,sprite,x,y, deltaX, 0)
+		public Enemy (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (hp,sprite,x,y, deltaX, deltaY)
 		{
 		}
 
 		public override void Update ()
 		{
-			X = X + DeltaX;
+			X += DeltaX;
+			Y += DeltaY;
 		}
 	}
 }

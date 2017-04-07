@@ -11,7 +11,7 @@ namespace MyGame
 
 		public PhysicsManager ()
 		{
-			if (_instance != null) 
+			if (_instance == null) 
 			{
 				// NORMAL CONSTRUCTOR
 				// Set up singleton
