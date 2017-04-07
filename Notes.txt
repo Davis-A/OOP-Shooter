@@ -57,10 +57,9 @@ TODO:
 Create Game Manager						--------done
 game manager needs interface to add enemies			--------done
 Create factory to make enemies - call enemy constructor		--------done
-Process Input for player (add delta movement)
-Player needs new Update()
-Enemy needs a DeltaY.
-Change Player Update to just process the deltas
+Process Input for player (add delta movement)			--------done
+Player needs new Update()					--------done
+Enemy needs a DeltaY.						--------done
 GameManager calls process inputs
 GameManager invokes updates
 	- tell all objects to mvoe based on deltas
@@ -69,8 +68,10 @@ GameManager invokes updates
 
 Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobjects.
 	future need to query player for things like life.
+Handle shooting - Player Process input needs to invoke the weapon to shoot, but how does the weapon pass the bullet to the world?
 Bounding boxes.  
 Enemy Updates need List from below:
+
 
 _______________
 ProcessInput for player:
