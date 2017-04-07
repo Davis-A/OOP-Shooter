@@ -60,7 +60,10 @@ Create factory to make enemies - call enemy constructor		--------done
 Process Input for player (add delta movement)			--------done
 Player needs new Update()					--------done
 Enemy needs a DeltaY.						--------done
-GameManager calls process inputs
+GameManager All Objects getter					--------done
+Gamemanager primary functions
+	ensure that they call their appropriate lists
+Update Main loop
 GameManager invokes updates
 	- tell all objects to mvoe based on deltas
 	- Physics manager - to give it ALL gameobjects - check collisions inside update
