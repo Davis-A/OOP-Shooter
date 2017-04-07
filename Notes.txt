@@ -1,3 +1,33 @@
+TODO ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+TODO:
+Create Game Manager						--------done
+game manager needs interface to add enemies			--------done
+Create factory to make enemies - call enemy constructor		--------done
+Process Input for player (add delta movement)			--------done
+Player needs new Update()					--------done
+Enemy needs a DeltaY.						--------done
+GameManager All Objects getter					--------done
+Move Processing Input out of player and into game manager.  this solves shooting problem 	------done
+Gamemanager primary functions
+	ensure that they call their appropriate lists		--------done
+Update Main loop						--------done
+GameManager invokes updates					
+	- tell all objects to mvoe based on deltas		--------done
+	- Physics manager - to give it ALL gameobjects - check collisions inside update
+
+
+Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobjects.			-----done
+	future need to query player for things like life.
+Handle shooting -   ---done ---
+Bounding boxes.  
+Handling collisions  should be called in gamemanager.update())
+Enemy Updates need List from below:
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 Questions:
 
 Where should i spawn enemies?  Design question.
@@ -53,27 +83,7 @@ PhysicsManager needs a method to allow the factory to add an enemy to it.
 Collision.  Create a boundry box.  Ie if the ship is at 50,50.  Swingame has SwinGame.RectanglesIntersect()
 _____________
 
-TODO:
-Create Game Manager						--------done
-game manager needs interface to add enemies			--------done
-Create factory to make enemies - call enemy constructor		--------done
-Process Input for player (add delta movement)			--------done
-Player needs new Update()					--------done
-Enemy needs a DeltaY.						--------done
-GameManager All Objects getter					--------done
-Gamemanager primary functions
-	ensure that they call their appropriate lists
-Update Main loop
-GameManager invokes updates
-	- tell all objects to mvoe based on deltas
-	- Physics manager - to give it ALL gameobjects - check collisions inside update
 
-
-Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobjects.
-	future need to query player for things like life.
-Handle shooting - Player Process input needs to invoke the weapon to shoot, but how does the weapon pass the bullet to the world?
-Bounding boxes.  
-Enemy Updates need List from below:
 
 
 _______________

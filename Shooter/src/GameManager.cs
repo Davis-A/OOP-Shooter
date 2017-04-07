@@ -32,7 +32,7 @@ namespace MyGame
 			_bullets = new List<Bullet> ();
 
 			//create player
-			Player p1 = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new PeaShooter ());
+			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
 		}
 
 
@@ -45,23 +45,62 @@ namespace MyGame
 
 		public void HandleInput () 
 		{
-			//get the player to handle it's own input handle the players input
+			SwinGame.ProcessEvents ();
+
+			//handle player input
+			_player.DeltaX = 0;
+			_player.DeltaY = 0;
+
+			if (SwinGame.KeyDown (KeyCode.DKey) && (_player.X < (SwinGame.ScreenWidth () - 50))) 
+			{
+				_player.DeltaX += _player.Speed;
+			}
+
+			if (SwinGame.KeyDown (KeyCode.AKey) && (_player.X > 0)) 
+			{
+				_player.DeltaX -= _player.Speed;
+			}
+
+			if (SwinGame.KeyDown (KeyCode.SKey) && (_player.Y < (SwinGame.ScreenHeight () - 40))) 
+			{
+				_player.DeltaY += _player.Speed;
+			}
+
+			if (SwinGame.KeyDown (KeyCode.WKey) && (_player.Y > 0)) 
+			{
+				_player.DeltaY -= _player.Speed;
+			}
+
+			//shoot
+
+			if (SwinGame.KeyTyped (KeyCode.SpaceKey) || SwinGame.MouseClicked (MouseButton.LeftButton) )
+			{
+				_bullets.Add(_player.Weapon.SpawnBullet (_player.X, _player.Y));
+			}
 		}
 
 		public void Update () 
 		{
-			//call all gameobjects to update
+			//update player
+			_player.Update ();
+			//update enemies
+			foreach (Enemy e in _enemies) 
+			{
+				e.Update ();
+			}
+			//update bullets
 
-
-
-
+			foreach (Bullet b in _bullets) 
+			{
+				b.Update ();
+			}
 		}
 
 
 
 		public void Render () 
 		{
-
+			GraphicsManager.Instance.Render (_player, _enemies, _bullets);
 		}
 
 

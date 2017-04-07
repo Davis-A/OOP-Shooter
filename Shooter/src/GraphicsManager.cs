@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using SwinGameSDK;
+
 namespace MyGame
 {
 	public class GraphicsManager
@@ -19,6 +22,28 @@ namespace MyGame
 		public static GraphicsManager Instance 
 		{
 			get { return _instance; }
+		}
+
+		public void Render (Player player, List<Enemy> enemies, List<Bullet> bullets) 
+		{
+			//Clear the screen and 
+			SwinGame.ClearScreen (Color.White);
+
+			foreach (Enemy e in enemies) 
+			{
+				e.Render ();
+			}
+
+			foreach (Bullet b in bullets) {
+				b.Render ();
+			}
+
+			player.Render ();
+
+			//draw the framerate
+			SwinGame.DrawFramerate (0, 0);
+			//draw the screen
+			SwinGame.RefreshScreen (60);
 		}
 	}
 }
