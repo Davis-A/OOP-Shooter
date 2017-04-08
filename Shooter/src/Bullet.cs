@@ -7,29 +7,37 @@ namespace MyGame
 
 		private int _radius;
 		private Color _clr;
+		private Rectangle _collisionBox;
 
 		public Bullet (float x, float y, float deltaX, float deltaY, int radius, Color clr) : base (x, y, deltaX, deltaY)
 		{
 			_radius = radius;
 			_clr = clr;
-		}
 
-		//temporary constructor
-		public Bullet (float x, float y, float deltaX, int radius, Color clr ) : base (x,y,deltaX,0)
-		{
-			_radius = radius;
-			_clr = clr;
+			_collisionBox = new Rectangle ();
+			_collisionBox.Height = radius * 2;
+			_collisionBox.Width = radius * 2;
+			_collisionBox.X = x - radius;
+			_collisionBox.Y = y - radius;
 		}
 
 		public override void Render ()
 		{
 			SwinGame.FillCircle (_clr, X, Y, _radius);
+			//Console.WriteLine ("Bullet: Height: {0} Width: {1}", _collisionBox.Height, _collisionBox.Width);
+
+			if (GameMain.DEBUG) 
+			{
+				SwinGame.DrawRectangle (SwinGame.ColorBlack (), _collisionBox.X, _collisionBox.Y, _collisionBox.Height, _collisionBox.Width);
+			}
 		}
 
 		public override void Update ()
 		{
-			X = X + DeltaX;
-			Y = Y + DeltaY;
+			base.Update ();
+			_collisionBox.X = X - _radius;
+			_collisionBox.Y = Y - _radius;
+
 		}
 	}
 }

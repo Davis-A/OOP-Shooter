@@ -14,13 +14,6 @@ namespace MyGame
 			_speed = 5;
 		}
 
-
-		public override void Update ()
-		{
-			X += DeltaX;
-			Y += DeltaY;
-		}
-
 		public Weapon Weapon 
 		{
 			get { return _weapon; }

@@ -24,6 +24,7 @@ Handle shooting -   ---done ---
 Bounding boxes.  
 Handling collisions  should be called in gamemanager.update())
 Enemy Updates need List from below:
+FOR COLLISIONS: My Rectangle() needs to be updated with every move too.  Can i pass it the gameobjects X/Y by reference?
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -123,6 +124,17 @@ Despawn
 
 
 ________________
+/////////////
+Questions:
+I currently have magic numbers in things like my guns.  Biggun has a magic 50 and 10 it passes to its base constructor to be the size and speed of the bullets it shoots.  And a magical 0 in it's SpawnBullet() method to give the bullet constructor a deltaY
+
+
+
+
+
+///////////
+
+
 
 Testing ideas:
 
@@ -133,6 +145,14 @@ Enemy movement patterns.  Check the delta of enemies after x iterations (enough 
 
 
 
+/
+
+
+
+_____________________////////
+JUST HD THINGS
+
+Modify Swingame Rectangle to be a class instead of an object.  Then i can have a constructor that accepts X,Y, height & width instead of just an empty one and then modifying it with properties.  This could lead me to having a uniform way to create the rectangle regardless of it being a bullet or Ship.  Also could lead to a single Update() method for all gameobjects too.
 
 
 	

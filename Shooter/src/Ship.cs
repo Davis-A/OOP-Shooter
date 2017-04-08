@@ -6,24 +6,36 @@ namespace MyGame
 	{
 		private int _hp;
 		private Bitmap _sprite;
-		private Rectangle _boundingBox;
+		private Rectangle _collisionBox;
 
 		public Ship (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (x, y, deltaX, deltaY)
 		{
 			_hp = hp;
 			_sprite = sprite; //SwinGame.LoadBitmap (bmpPath);
-			_boundingBox = new Rectangle ();
-			_boundingBox.Height = sprite.Height;
-			_boundingBox.Width = sprite.Width;
+			_collisionBox = new Rectangle ();
+			_collisionBox.Height = sprite.Height;
+			_collisionBox.Width = sprite.Width;
+			_collisionBox.X = x;
+			_collisionBox.Y = y;
 		}
 
 		public override void Render ()
 		{
 			SwinGame.DrawBitmap (Sprite, X, Y);
+
+
 			if (GameMain.DEBUG)
 			{
-				SwinGame.DrawRectangle (SwinGame.ColorBlack (), X, Y, _boundingBox.Width, _boundingBox.Height);
+				SwinGame.DrawRectangle (SwinGame.ColorBlack (), _collisionBox.X, _collisionBox.Y, _collisionBox.Width, _collisionBox.Height);
 			}
+		}
+
+		public override void Update ()
+		{
+			base.Update ();
+			_collisionBox.X = X;
+			_collisionBox.Y = Y;
+			//Console.WriteLine ("Ship: Height: {0} Width: {1}", _collisionBox.Height, _collisionBox.Width);
 		}
 
 

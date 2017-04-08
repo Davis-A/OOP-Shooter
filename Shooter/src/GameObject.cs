@@ -1,4 +1,5 @@
 ﻿using System;
+using SwinGameSDK;
 namespace MyGame
 {
 	public abstract class GameObject
@@ -15,7 +16,11 @@ namespace MyGame
 			_deltaX = deltaX;
 			_deltaY = deltaY;
 		}
-		public abstract void Update ();
+		public virtual void Update () 
+		{
+			X += DeltaX;
+			Y += DeltaY;
+		}
 		public abstract void Render ();
 
 		public float X 
@@ -42,6 +47,5 @@ namespace MyGame
 			get { return _deltaY; }
 			set { _deltaY = value; }
 		}
-
 	}
 }

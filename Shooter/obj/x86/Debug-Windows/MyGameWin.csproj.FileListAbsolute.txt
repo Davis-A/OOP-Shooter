@@ -29,4 +29,3 @@ C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\normnfkc.nlp
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\normnfkd.nlp
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\obj\x86\Debug-Windows\MyGame.pdb
-C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache

@@ -10,7 +10,7 @@ namespace MyGame
 
 		public override Bullet SpawnBullet (float x, float y)
 		{
-			return new Bullet (x, y, Speed, Radius, CLR);
+			return new Bullet (x, y, Speed, 0, Radius, CLR);
 		}
 	}
 }
