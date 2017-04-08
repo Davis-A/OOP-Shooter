@@ -23,6 +23,13 @@ namespace MyGame
 			}
 		}
 
+
+		public void CollisionHandler () 
+		{
+			//SwinGame.RectanglesIntersect ();
+		}
+
+
 		public static PhysicsManager Instance 
 		{
 			get { return _instance; }
