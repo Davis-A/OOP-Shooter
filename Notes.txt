@@ -18,6 +18,7 @@ GameManager invokes updates
 
 
 Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobjects.			-----done
+Can all moveable objects share the same Update() ?? Given they all move via DetaX/DeltaY they should.
 	future need to query player for things like life.
 Handle shooting -   ---done ---
 Bounding boxes.  
@@ -110,6 +111,7 @@ Enemy
 	Each update increment lifetime
 	when lifetime hits 100 change dxdy to next dictionary item.
 
+____________
 
 ____________
 Despawn
@@ -118,6 +120,18 @@ Despawn
 
 	Bullet
 		if (X < 0-Radius) || (X > ScreenWidth() + Radius) || (Y < 0-Radius) || (Y > ScreenHeight()+Radius) THEN Despawn()
+
+
+________________
+
+Testing ideas:
+
+spawn enemies (or bullets), give them deltas.  Create loop for x iterations and then check enemy X/Y location
+spawn enemy and bullet.  Set them on a collision course after x iterations, check they have collided
+
+Enemy movement patterns.  Check the delta of enemies after x iterations (enough that it triggers their next movement delta).
+
+
 
 
 
