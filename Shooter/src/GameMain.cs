@@ -25,7 +25,6 @@ namespace MyGame
 				  //does this go in GraphicsManager.Render?
 				//Draw onto the screen
 				 //Does this go in GraphicsManger.Render()?
-
 			}
 			SwinGame.ReleaseAllBitmaps ();
         }
