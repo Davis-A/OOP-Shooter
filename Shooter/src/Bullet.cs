@@ -37,7 +37,12 @@ namespace MyGame
 			base.Update ();
 			_collisionBox.X = X - _radius;
 			_collisionBox.Y = Y - _radius;
-
 		}
+
+		public Rectangle CollisionBox 
+		{
+			get { return _collisionBox; }
+		}
+
 	}
 }

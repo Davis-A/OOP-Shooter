@@ -22,7 +22,7 @@ Can all moveable objects share the same Update() ?? Given they all move via Deta
 	future need to query player for things like life.
 Handle shooting -   ---done ---
 Bounding boxes.  
-Handling collisions  should be called in gamemanager.update())
+Handling collisions  should be called in gamemanager.update()) 			----Done- sorta.  
 Enemy Updates need List from below:
 FOR COLLISIONS: My Rectangle() needs to be updated with every move too.  Can i pass it the gameobjects X/Y by reference?
 

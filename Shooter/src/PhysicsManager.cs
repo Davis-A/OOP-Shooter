@@ -24,9 +24,34 @@ namespace MyGame
 		}
 
 
-		public void CollisionHandler () 
+		public void CollisionHandler (Player player, List<Enemy> enemies, List<Bullet> bullets) 
 		{
 			//SwinGame.RectanglesIntersect ();
+
+			//check bullet intersects enemy
+			//TODO make this despawn the bullet and enemy.
+
+			foreach (Enemy e in enemies) 
+			{
+				foreach (Bullet b in bullets) 
+				{
+					if (SwinGame.RectanglesIntersect (e.CollisionBox, b.CollisionBox))
+					{
+						Console.WriteLine ("bullet enemy collision detected");
+					}
+				}
+
+				if (SwinGame.RectanglesIntersect (e.CollisionBox, player.CollisionBox)) 
+				{
+					Console.WriteLine ("player enemy collision detected");
+				}
+
+			}
+
+			//Check enemy intersects player
+
+
+
 		}
 
 

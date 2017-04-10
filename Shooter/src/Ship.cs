@@ -51,6 +51,11 @@ namespace MyGame
 			SwinGame.FreeBitmap (_sprite);
 		}
 
+		public Rectangle CollisionBox 
+		{
+			get { return _collisionBox; }
+		}
+
 
 	}
 }

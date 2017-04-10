@@ -41,6 +41,11 @@ namespace MyGame
 		public void Init () 
 		{
 			//do something?  maybe open the window?
+
+			//temporary commands
+			Factory.Instance.BuildEnemy (1, 200, 200, 0, 0);
+
+
 		}
 
 		public void HandleInput () 
@@ -94,6 +99,8 @@ namespace MyGame
 			{
 				b.Update ();
 			}
+
+			PhysicsManager.Instance.CollisionHandler (_player, _enemies, _bullets);
 		}
 
 
