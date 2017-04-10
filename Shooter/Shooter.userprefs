@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Ship.cs">
     <Files>
       <File FileName="src\GameMain.cs" Line="27" Column="48" />
       <File FileName="src\Enemy.cs" Line="13" Column="1" />

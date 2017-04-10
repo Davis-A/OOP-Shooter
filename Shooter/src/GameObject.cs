@@ -2,19 +2,33 @@
 using SwinGameSDK;
 namespace MyGame
 {
+
+
 	public abstract class GameObject
 	{
+		public static Rectangle CreateCollisionBox (float x, float y, int height, int width)
+		{
+			Rectangle collisionBox = new Rectangle();
+			collisionBox.X = x;
+			collisionBox.Y = y;
+			collisionBox.Height = height;
+			collisionBox.Width = width;
+			return collisionBox;
+		}
+
 		private float _x;
 		private float _y;
 		private float _deltaX;
 		private float _deltaY;
+		private Rectangle _collisionBox;
 
-		public GameObject (float x,float y,float deltaX,float deltaY)
+		public GameObject (float x,float y,float deltaX,float deltaY, Rectangle collisionBox)
 		{
 			_x = x;
 			_y = y;
 			_deltaX = deltaX;
 			_deltaY = deltaY;
+			_collisionBox = collisionBox;
 		}
 		public virtual void Update () 
 		{
@@ -46,6 +60,16 @@ namespace MyGame
 		{
 			get { return _deltaY; }
 			set { _deltaY = value; }
+		}
+
+		public void SetCollisionBoxLocation (float x, float y)
+		{
+			_collisionBox.X = x;
+			_collisionBox.Y = y;
+		}
+
+		public Rectangle CollisionBox {
+			get { return _collisionBox; }
 		}
 	}
 }

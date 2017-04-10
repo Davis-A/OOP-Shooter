@@ -1,13 +1,13 @@
 TODO ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 TODO:
-Create Game Manager						--------done
-game manager needs interface to add enemies			--------done
-Create factory to make enemies - call enemy constructor		--------done
-Process Input for player (add delta movement)			--------done
-Player needs new Update()					--------done
-Enemy needs a DeltaY.						--------done
-GameManager All Objects getter					--------done
+Create Game Manager												--------done
+game manager needs interface to add enemies									--------done
+Create factory to make enemies - call enemy constructor								--------done
+Process Input for player (add delta movement)									--------done
+Player needs new Update()											--------done
+Enemy needs a DeltaY.												--------done
+GameManager All Objects getter											--------done
 Move Processing Input out of player and into game manager.  this solves shooting problem 	------done
 Gamemanager primary functions
 	ensure that they call their appropriate lists		--------done
