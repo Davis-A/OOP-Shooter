@@ -32,7 +32,7 @@ namespace MyGame
 			_bullets = new List<Bullet> ();
 
 			//create player
-			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new PeaShooter ());
+			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun());
 		}
 
 
@@ -43,7 +43,7 @@ namespace MyGame
 			//do something?  maybe open the window?
 
 			//temporary commands
-			Factory.Instance.BuildEnemy (1, 200, 200, 0, 0);
+			Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
 
 
 		}
@@ -81,6 +81,17 @@ namespace MyGame
 			if (SwinGame.KeyTyped (KeyCode.SpaceKey) || SwinGame.MouseClicked (MouseButton.LeftButton) )
 			{
 				_bullets.Add(_player.Weapon.SpawnBullet (_player.X, _player.Y));
+			}
+
+			//Pause game
+
+			if (SwinGame.KeyTyped (KeyCode.PKey)) 
+			{
+				SwinGame.ProcessEvents ();
+				while (!SwinGame.KeyTyped (KeyCode.PKey)) 
+				{
+					SwinGame.ProcessEvents ();
+				}
 			}
 		}
 

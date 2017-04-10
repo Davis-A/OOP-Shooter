@@ -6,7 +6,7 @@ namespace MyGame
 {
     public class GameMain
     {
-		public static bool DEBUG = true;
+		public static bool DEBUG = false;
 		public static void Main()
         {
 			GameManager game = new GameManager ();
@@ -21,13 +21,6 @@ namespace MyGame
 				game.HandleInput ();
 				game.Update ();
 				game.Render ();
-
-
-
-
-
-
-
 
 				  //does this go in GraphicsManager.Render?
 				//Draw onto the screen
