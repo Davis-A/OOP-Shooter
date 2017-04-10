@@ -46,6 +46,11 @@ namespace MyGame
 
 		//temp methods to stop crashing
 
+		public void RemoveHp () 
+		{
+			_hp = _hp - 1;
+		}
+
 		public void Freebmp () 
 		{
 			SwinGame.FreeBitmap (_sprite);
@@ -54,6 +59,11 @@ namespace MyGame
 		public Rectangle CollisionBox 
 		{
 			get { return _collisionBox; }
+		}
+
+		public int HP 
+		{
+			get { return _hp; }
 		}
 
 

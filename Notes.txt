@@ -21,12 +21,12 @@ Graphics manager.  Draw and render.  Needs to ask GameManager for all gameobject
 Can all moveable objects share the same Update() ?? Given they all move via DetaX/DeltaY they should.
 	future need to query player for things like life.
 Handle shooting -   ---done ---
-Bounding boxes.  
+
 Handling collisions  should be called in gamemanager.update()) 			----Done- sorta.  
 Enemy Updates need List from below:
-Despawn
-	Bullets
-	enemies			
+Despawn (when out of bounds)								----done
+	Bullets							----done
+	enemies							----done
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

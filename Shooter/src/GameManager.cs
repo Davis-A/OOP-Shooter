@@ -101,11 +101,27 @@ namespace MyGame
 			}
 
 			PhysicsManager.Instance.CollisionHandler (_player, _enemies, _bullets);
+			DespawnDeadEnemies ();
+
+
+			//outside area despawn
 			DespawnBulletsOutOfBounds ();
 			DeSpawnEnemiesOutOfBounds ();
 
-			//outside area despawn
 
+
+
+		}
+
+		private void DespawnDeadEnemies () 
+		{
+			for (int i = _enemies.Count - 1; i >= 0; i--) 
+			{
+				if (_enemies [i].HP <= 0) 
+				{
+					_enemies.Remove (_enemies [i]);
+				}
+			}
 		}
 
 
