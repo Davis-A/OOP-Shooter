@@ -11,7 +11,7 @@ namespace MyGame
 		public Ship (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (x, y, deltaX, deltaY)
 		{
 			_hp = hp;
-			_sprite = sprite; //SwinGame.LoadBitmap (bmpPath);
+			_sprite = sprite;
 			_collisionBox = new Rectangle ();
 			_collisionBox.Height = sprite.Height;
 			_collisionBox.Width = sprite.Width;

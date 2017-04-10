@@ -44,5 +44,10 @@ namespace MyGame
 			get { return _collisionBox; }
 		}
 
+		public int Radius 
+		{
+			get { return _radius; }
+		}
+
 	}
 }

@@ -29,7 +29,8 @@ namespace MyGame
 			//SwinGame.RectanglesIntersect ();
 
 			//check bullet intersects enemy
-			//TODO make this despawn the bullet and enemy.
+			//TODO make bullet enemy collision despawn them both.
+			//TODO make Player enemy collision remove 1hp.  When enemy hp reaches zero despawn?
 
 			foreach (Enemy e in enemies) 
 			{
@@ -41,6 +42,7 @@ namespace MyGame
 					}
 				}
 
+				//Check enemy intersects player
 				if (SwinGame.RectanglesIntersect (e.CollisionBox, player.CollisionBox)) 
 				{
 					Console.WriteLine ("player enemy collision detected");
@@ -48,7 +50,7 @@ namespace MyGame
 
 			}
 
-			//Check enemy intersects player
+
 
 
 

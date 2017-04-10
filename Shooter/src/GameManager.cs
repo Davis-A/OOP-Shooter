@@ -32,7 +32,7 @@ namespace MyGame
 			_bullets = new List<Bullet> ();
 
 			//create player
-			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
+			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new PeaShooter ());
 		}
 
 
@@ -101,8 +101,39 @@ namespace MyGame
 			}
 
 			PhysicsManager.Instance.CollisionHandler (_player, _enemies, _bullets);
+			DespawnBulletsOutOfBounds ();
+			DeSpawnEnemiesOutOfBounds ();
+
+			//outside area despawn
+
 		}
 
+
+		private void DeSpawnEnemiesOutOfBounds () 
+		{
+			for (int i = _enemies.Count - 1; i >= 0; i--)
+			{
+				//Console.WriteLine ("X: {0}, Y:{1} ",_enemies[i].X, _enemies[i].Y);
+				if ((_enemies [i].X < -SwinGame.ScreenWidth ()) || (_enemies [i].X > SwinGame.ScreenWidth () *2) || (_enemies [i].Y < -SwinGame.ScreenHeight ()) || (_enemies [i].Y > SwinGame.ScreenHeight () * 2))
+				{
+					//Console.WriteLine ("Enemy out of bounds");
+					_enemies.Remove (_enemies [i]);
+				}
+			}
+
+		}
+
+		private void DespawnBulletsOutOfBounds()
+		{
+			for (int i = _bullets.Count - 1; i >= 0; i--) 
+			{//to far left, too far right, too far up, too far below
+				if (((_bullets [i].X + _bullets[i].Radius) < 0)  || ((_bullets [i].X - _bullets [i].Radius) > SwinGame.ScreenWidth ()) || (_bullets [i].Y + _bullets [i].Radius < 0) || ((_bullets [i].Y - _bullets [i].Radius) > SwinGame.ScreenHeight ())) 
+				{
+					//Console.WriteLine ("Bullet out of range");
+					_bullets.Remove (_bullets [i]);
+				}
+			}
+		}
 
 
 		public void Render () 

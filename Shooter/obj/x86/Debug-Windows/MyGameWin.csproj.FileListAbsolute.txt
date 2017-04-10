@@ -1,3 +1,5 @@
+C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\MyGame.exe
+C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\SwinGame.dll
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\animations\startup.txt
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\bundles\FileDialog.txt
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\bundles\splash.txt
@@ -18,10 +20,8 @@ C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\sou
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\sounds\SwinGameStart.wav
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\SwinGame.icns
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\Resources\SwinGame.ico
-C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\MyGame.exe
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\MyGame.pdb
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\mscorlib.dll
-C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\SwinGame.dll
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\normidna.nlp
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\normnfc.nlp
 C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\bin\Debug\normnfd.nlp
