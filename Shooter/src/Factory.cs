@@ -28,7 +28,7 @@ namespace MyGame
 
 		public void BuildBossOne () 
 		{
-			MemoryManager.Instance._boss1 = new BossOne (5, _enemybitmap, 200, 200, 0, 0);
+			MemoryManager.Instance.AddEnemy( new BossOne (5, SwinGame.LoadBitmap(@"sprites\BossOne.png"), SwinGame.ScreenWidth(), SwinGame.ScreenHeight()/2, 0, 0));
 		}
 
 		public void BuildEnemy (int hp, float x, float y, List<DeltaMovement> deltaMovement)

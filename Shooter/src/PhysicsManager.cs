@@ -29,7 +29,7 @@ namespace MyGame
 
 			//delete bullets that have collided
 
-			foreach (Drone e in MemoryManager.Instance.Enemies)
+			foreach (Enemy e in MemoryManager.Instance.Enemies)
 			{
 				for (int i = MemoryManager.Instance.Bullets.Count - 1; i>= 0; i--) 
 				{
@@ -42,7 +42,7 @@ namespace MyGame
 			}
 
 
-			foreach (Drone e in MemoryManager.Instance.Enemies) {
+			foreach (Enemy e in MemoryManager.Instance.Enemies) {
 				if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Player.CollisionBox)) {
 					//Console.WriteLine ("player enemy collision detected");
 					MemoryManager.Instance.Player.RemoveHp ();

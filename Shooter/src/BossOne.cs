@@ -2,7 +2,7 @@
 using SwinGameSDK;
 namespace MyGame
 {
-	public class BossOne : Ship
+	public class BossOne : Enemy
 	{
 		public BossOne (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (hp, sprite, x, y, deltaX, deltaY)
 		{
@@ -21,7 +21,7 @@ namespace MyGame
 
 			DeltaX = (float)(tx / dist) * speed;
 			DeltaY = (float)(ty / dist) * speed;
-			Console.WriteLine ("DeltaX: {0} DeltaY: {1}", DeltaX, DeltaY);
+			//Console.WriteLine ("DeltaX: {0} DeltaY: {1}", DeltaX, DeltaY);
 			base.Update ();
 		}
 

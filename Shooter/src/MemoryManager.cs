@@ -10,20 +10,19 @@ namespace MyGame
 
 		//gameobject lists
 		private List<Bullet> _bullets;
-		private List<Drone> _enemies;
+		private List<Enemy> _enemies;
 		private Player _player;
-		public BossOne _boss1;
 
 		public MemoryManager ()
 		{
 			if (_instance == null) 
 			{
 				//create enemy and bullet lists
-				_enemies = new List<Drone> ();
+				_enemies = new List<Enemy> ();
 				_bullets = new List<Bullet> ();
 
 				//create player
-				_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
+				_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new PeaShooter ());
 				_instance = this;
 			}
 			else 
@@ -53,18 +52,18 @@ namespace MyGame
 			_bullets.Remove (b);
 		}
 
-		public List<Drone> Enemies 
+		public List<Enemy> Enemies 
 		{
 			get { return _enemies; }
 		}
 
-		public void DespawnEnemy (Drone e) 
+		public void DespawnEnemy (Enemy e) 
 		{
 			_enemies.Remove (e);
 		}
 
 		//using a method.  I don't what anything other than the world being able to do things with the enemy list.  When it comes to rendering i will have GameManager create a list of every Game object 
-		public void AddEnemy (Drone e)
+		public void AddEnemy (Enemy e)
 		{
 			_enemies.Add (e);
 		}

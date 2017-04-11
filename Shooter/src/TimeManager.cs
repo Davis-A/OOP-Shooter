@@ -29,10 +29,11 @@ namespace MyGame
 			//start phase one
 			if (_counter == 50 || _counter == 100 || _counter == 150) {
 				Factory.Instance.PhaseOne ();
-			} 
-			else if (_counter == 300 || _counter == 350 || _counter == 400) 
-			{
+			} else if (_counter == 300 || _counter == 350 || _counter == 400) {
 				Factory.Instance.PhaseTwo ();
+			} else if (_counter == 800) 
+			{
+				Factory.Instance.BuildBossOne ();
 			}
 
 
