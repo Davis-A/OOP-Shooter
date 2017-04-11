@@ -55,6 +55,7 @@
     <Compile Include="src\PhysicsManager.cs" />
     <Compile Include="src\GameManager.cs" />
     <Compile Include="src\TimeManager.cs" />
+    <Compile Include="src\DeltaMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

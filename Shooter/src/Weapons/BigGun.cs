@@ -8,9 +8,11 @@ namespace MyGame
 		{
 		}
 
-		public override Bullet SpawnBullet (float x, float y)
+		public override void Shoot (float x, float y)
 		{
-			return new Bullet (x, y, Speed, 0, Radius, CLR);
+			float deltaX = Speed;
+			float deltaY = 0;
+			Factory.Instance.BuildBullet (x, y, deltaX, deltaY, Radius, CLR);
 		}
 	}
 }

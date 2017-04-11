@@ -9,7 +9,7 @@ namespace MyGame
 		{
 		}
 
-		public override Bullet SpawnBullet (float x, float y) 
+		public override void Shoot (float x, float y) 
 		{
 
 			Double tx = SwinGame.MouseX() - x;
@@ -21,8 +21,7 @@ namespace MyGame
 
 			Double deltaX = (tx / dist) * Speed;
 			Double deltaY = (ty / dist) * Speed;
-
-			return new Bullet (x, y,(float)deltaX, (float)deltaY, Radius, CLR);
+			Factory.Instance.BuildBullet (x, y, (float)deltaX, (float)deltaY, Radius, CLR);
 		}
 	}
 }

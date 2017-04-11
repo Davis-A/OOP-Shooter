@@ -17,8 +17,6 @@ namespace MyGame
 		private Player _player;
 
 
-
-
 		public GameManager ()
 		{
 			//spawn singletons
@@ -43,7 +41,10 @@ namespace MyGame
 			//do something?  maybe open the window?
 
 			//temporary commands
-			Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
+
+
+
+			//Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
 
 
 		}
@@ -80,7 +81,7 @@ namespace MyGame
 
 			if (SwinGame.KeyTyped (KeyCode.SpaceKey) || SwinGame.MouseClicked (MouseButton.LeftButton) )
 			{
-				_bullets.Add(_player.Weapon.SpawnBullet (_player.X, _player.Y));
+				_player.Weapon.Shoot (_player.X, _player.Y);
 			}
 
 			//Pause game
@@ -97,6 +98,7 @@ namespace MyGame
 
 		public void Update () 
 		{
+			TimeManager.Instance.TimeRun ();
 			//update player
 			_player.Update ();
 			//update enemies
@@ -179,6 +181,11 @@ namespace MyGame
 		public void AddEnemy (Enemy e)
 		{
 			_enemies.Add (e);
+		}
+
+		public void AddBullet (Bullet b) 
+		{
+			_bullets.Add (b);
 		}
 
 		public List<GameObject> GetAllGameObjects

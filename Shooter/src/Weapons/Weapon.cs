@@ -16,7 +16,7 @@ namespace MyGame
 			_speed = speed;
 		}
 
-		public abstract Bullet SpawnBullet (float x, float y);
+		public abstract void Shoot (float x, float y);
 
 
 		public Color CLR 
