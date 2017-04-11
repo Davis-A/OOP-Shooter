@@ -24,21 +24,21 @@ namespace MyGame
 			get { return _instance; }
 		}
 
-		public void Render (Player player, List<Enemy> enemies, List<Bullet> bullets) 
+		public void Render () 
 		{
 			//Clear the screen and 
 			SwinGame.ClearScreen (Color.White);
 
-			foreach (Enemy e in enemies) 
+			foreach (Enemy e in MemoryManager.Instance.Enemies) 
 			{
 				e.Render ();
 			}
 
-			foreach (Bullet b in bullets) {
+			foreach (Bullet b in MemoryManager.Instance.Bullets) {
 				b.Render ();
 			}
 
-			player.Render ();
+			MemoryManager.Instance.Player.Render ();
 
 			//draw the framerate
 			SwinGame.DrawFramerate (0, 0);

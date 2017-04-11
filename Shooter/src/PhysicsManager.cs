@@ -24,50 +24,28 @@ namespace MyGame
 		}
 
 
-		public void CollisionHandler (Player player, List<Enemy> enemies, List<Bullet> bullets)
+		public void CollisionHandler ()
 		{
-			//SwinGame.RectanglesIntersect ();
-
-			//check bullet intersects enemy
-			//TODO make bullet enemy collision despawn them both.
-			//TODO make Player enemy collision remove 1hp.  When enemy hp reaches zero despawn?
-
-
-
-			//List<GameObject> ToDelete = new List<GameObject> ();
-			//enemy bullet collision
-			/*foreach (Enemy e in enemies) 
-			{
-				foreach (Bullet b in bullets) 
-				{
-					if (SwinGame.RectanglesIntersect (e.CollisionBox, b.CollisionBox)) 
-					{
-						Console.WriteLine ("bullet enemy collision detected");
-						ToDelete.Add (b);
-					}
-				}
-				//Check enemy intersects player
-			}*/
 
 			//delete bullets that have collided
 
-			foreach (Enemy e in enemies)
+			foreach (Enemy e in MemoryManager.Instance.Enemies)
 			{
-				for (int i = bullets.Count - 1; i>= 0; i--) 
+				for (int i = MemoryManager.Instance.Bullets.Count - 1; i>= 0; i--) 
 				{
-					if (SwinGame.RectanglesIntersect (e.CollisionBox, bullets[i].CollisionBox)) {
+					if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) {
 						//Console.WriteLine ("bullet enemy collision detected");
-						bullets.Remove (bullets [i]);
+						MemoryManager.Instance.Bullets.Remove (MemoryManager.Instance.Bullets [i]);
 						e.RemoveHp ();
 					}
 				}
 			}
 
 
-			foreach (Enemy e in enemies) {
-				if (SwinGame.RectanglesIntersect (e.CollisionBox, player.CollisionBox)) {
+			foreach (Enemy e in MemoryManager.Instance.Enemies) {
+				if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Player.CollisionBox)) {
 					//Console.WriteLine ("player enemy collision detected");
-					player.RemoveHp ();
+					MemoryManager.Instance.Player.RemoveHp ();
 				}
 			}
 		}

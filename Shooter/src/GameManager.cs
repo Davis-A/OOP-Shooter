@@ -10,27 +10,19 @@ namespace MyGame
 		private TimeManager _timeManager;
 		private PhysicsManager _physicsManager;
 		private GraphicsManager _graphicsManager;
+		private MemoryManager _memoryManager;
 
-		//gameobject lists
-		private List<Bullet> _bullets;
-		private List<Enemy> _enemies;
-		private Player _player;
+
 
 
 		public GameManager ()
 		{
 			//spawn singletons
-			_factory = new Factory (this);
+			_factory = new Factory ();
 			_timeManager = new TimeManager ();
 			_physicsManager = new PhysicsManager ();
 			_graphicsManager = new GraphicsManager ();
-
-			//create enemy and bullet lists
-			_enemies = new List<Enemy> ();
-			_bullets = new List<Bullet> ();
-
-			//create player
-			_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun());
+			_memoryManager = new MemoryManager ();
 		}
 
 
@@ -41,7 +33,7 @@ namespace MyGame
 			//do something?  maybe open the window?
 
 			//temporary commands
-
+			//Factory.Instance.BuildBossOne ();
 
 			//Factory.Instance.PhaseTwo ();
 			//Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
@@ -54,34 +46,34 @@ namespace MyGame
 			SwinGame.ProcessEvents ();
 
 			//handle player input
-			_player.DeltaX = 0;
-			_player.DeltaY = 0;
+			MemoryManager.Instance.Player.DeltaX = 0;
+			MemoryManager.Instance.Player.DeltaY = 0;
 
-			if (SwinGame.KeyDown (KeyCode.DKey) && (_player.X < (SwinGame.ScreenWidth () - 50))) 
+			if (SwinGame.KeyDown (KeyCode.DKey) && (MemoryManager.Instance.Player.X < (SwinGame.ScreenWidth () - 50))) 
 			{
-				_player.DeltaX += _player.Speed;
+				MemoryManager.Instance.Player.DeltaX += MemoryManager.Instance.Player.Speed;
 			}
 
-			if (SwinGame.KeyDown (KeyCode.AKey) && (_player.X > 0)) 
+			if (SwinGame.KeyDown (KeyCode.AKey) && (MemoryManager.Instance.Player.X > 0)) 
 			{
-				_player.DeltaX -= _player.Speed;
+				MemoryManager.Instance.Player.DeltaX -= MemoryManager.Instance.Player.Speed;
 			}
 
-			if (SwinGame.KeyDown (KeyCode.SKey) && (_player.Y < (SwinGame.ScreenHeight () - 40))) 
+			if (SwinGame.KeyDown (KeyCode.SKey) && (MemoryManager.Instance.Player.Y < (SwinGame.ScreenHeight () - 40))) 
 			{
-				_player.DeltaY += _player.Speed;
+				MemoryManager.Instance.Player.DeltaY += MemoryManager.Instance.Player.Speed;
 			}
 
-			if (SwinGame.KeyDown (KeyCode.WKey) && (_player.Y > 0)) 
+			if (SwinGame.KeyDown (KeyCode.WKey) && (MemoryManager.Instance.Player.Y > 0)) 
 			{
-				_player.DeltaY -= _player.Speed;
+				MemoryManager.Instance.Player.DeltaY -= MemoryManager.Instance.Player.Speed;
 			}
 
 			//shoot
 
 			if (SwinGame.KeyTyped (KeyCode.SpaceKey) || SwinGame.MouseClicked (MouseButton.LeftButton) )
 			{
-				_player.Weapon.Shoot (_player.X, _player.Y);
+				MemoryManager.Instance.Player.Weapon.Shoot (MemoryManager.Instance.Player.X, MemoryManager.Instance.Player.Y);
 			}
 
 			//Pause game
@@ -100,66 +92,62 @@ namespace MyGame
 		{
 			TimeManager.Instance.TimeRun ();
 			//update player
-			_player.Update ();
+			MemoryManager.Instance.Player.Update ();
 			//update enemies
-			foreach (Enemy e in _enemies) 
+			foreach (Enemy e in MemoryManager.Instance.Enemies) 
 			{
 				e.Update ();
 			}
 			//update bullets
 
-			foreach (Bullet b in _bullets) 
+			foreach (Bullet b in MemoryManager.Instance.Bullets) 
 			{
 				b.Update ();
 			}
 
-			PhysicsManager.Instance.CollisionHandler (_player, _enemies, _bullets);
-			DespawnDeadEnemies ();
+			PhysicsManager.Instance.CollisionHandler ();
+			IsEnemyDead ();
 
 
 			//outside area despawn
-			DespawnBulletsOutOfBounds ();
-			DeSpawnEnemiesOutOfBounds ();
-
-
-
-
+			IsBulletsOutOfBounds ();
+			IsEnemyOutOfBounds ();
 		}
 
-		private void DespawnDeadEnemies () 
+		private void IsEnemyDead () 
 		{
-			for (int i = _enemies.Count - 1; i >= 0; i--) 
+			for (int i = MemoryManager.Instance.Enemies.Count - 1; i >= 0; i--) 
 			{
-				if (_enemies [i].HP <= 0) 
+				if (MemoryManager.Instance.Enemies[i].HP <= 0) 
 				{
-					_enemies.Remove (_enemies [i]);
+					MemoryManager.Instance.DespawnEnemy(MemoryManager.Instance.Enemies[i]);
 				}
 			}
 		}
 
 
-		private void DeSpawnEnemiesOutOfBounds () 
+		private void IsEnemyOutOfBounds () 
 		{
-			for (int i = _enemies.Count - 1; i >= 0; i--)
+			for (int i = MemoryManager.Instance.Enemies.Count - 1; i >= 0; i--)
 			{
 				//Console.WriteLine ("X: {0}, Y:{1} ",_enemies[i].X, _enemies[i].Y);
-				if ((_enemies [i].X < -SwinGame.ScreenWidth ()) || (_enemies [i].X > SwinGame.ScreenWidth () *2) || (_enemies [i].Y < -SwinGame.ScreenHeight ()) || (_enemies [i].Y > SwinGame.ScreenHeight () * 2))
+				if ((MemoryManager.Instance.Enemies [i].X < -SwinGame.ScreenWidth ()) || (MemoryManager.Instance.Enemies [i].X > SwinGame.ScreenWidth () *2) || (MemoryManager.Instance.Enemies [i].Y < -SwinGame.ScreenHeight ()) || (MemoryManager.Instance.Enemies [i].Y > SwinGame.ScreenHeight () * 2))
 				{
 					//Console.WriteLine ("Enemy out of bounds");
-					_enemies.Remove (_enemies [i]);
+					MemoryManager.Instance.DespawnEnemy(MemoryManager.Instance.Enemies[i]);
 				}
 			}
 
 		}
 
-		private void DespawnBulletsOutOfBounds()
+		private void IsBulletsOutOfBounds()
 		{
-			for (int i = _bullets.Count - 1; i >= 0; i--) 
+			for (int i = MemoryManager.Instance.Bullets.Count - 1; i >= 0; i--) 
 			{//to far left, too far right, too far up, too far below
-				if (((_bullets [i].X + _bullets[i].Radius) < 0)  || ((_bullets [i].X - _bullets [i].Radius) > SwinGame.ScreenWidth ()) || (_bullets [i].Y + _bullets [i].Radius < 0) || ((_bullets [i].Y - _bullets [i].Radius) > SwinGame.ScreenHeight ())) 
+				if (((MemoryManager.Instance.Bullets [i].X + MemoryManager.Instance.Bullets[i].Radius) < 0)  || ((MemoryManager.Instance.Bullets [i].X - MemoryManager.Instance.Bullets [i].Radius) > SwinGame.ScreenWidth ()) || (MemoryManager.Instance.Bullets [i].Y + MemoryManager.Instance.Bullets [i].Radius < 0) || ((MemoryManager.Instance.Bullets [i].Y - MemoryManager.Instance.Bullets [i].Radius) > SwinGame.ScreenHeight ())) 
 				{
 					//Console.WriteLine ("Bullet out of range");
-					_bullets.Remove (_bullets [i]);
+					MemoryManager.Instance.DespawnBullet (MemoryManager.Instance.Bullets [i]);
 				}
 			}
 		}
@@ -167,42 +155,8 @@ namespace MyGame
 
 		public void Render () 
 		{
-			GraphicsManager.Instance.Render (_player, _enemies, _bullets);
+			GraphicsManager.Instance.Render ();
 		}
-
-
-
-
-
-
-		//accessors
-
-		//using a method.  I don't what anything other than the world being able to do things with the enemy list.  When it comes to rendering i will have GameManager create a list of every Game object 
-		public void AddEnemy (Enemy e)
-		{
-			_enemies.Add (e);
-		}
-
-		public void AddBullet (Bullet b) 
-		{
-			_bullets.Add (b);
-		}
-
-		public List<GameObject> GetAllGameObjects
-		{
-			get 
-			{
-				List<GameObject> allGameobjects = new List<GameObject> ();
-				allGameobjects.AddRange (_bullets);
-				allGameobjects.AddRange (_enemies);
-				allGameobjects.Add (_player);
-				return allGameobjects;
-			}
-		}
-
-
-
-
 
 	}
 }

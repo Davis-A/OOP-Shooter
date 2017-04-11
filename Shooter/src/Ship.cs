@@ -36,10 +36,7 @@ namespace MyGame
 			_hp = _hp - 1;
 		}
 
-		public void Freebmp ()  
-		{
-			SwinGame.FreeBitmap (_sprite);
-		}
+
 
 		public int HP 
 		{

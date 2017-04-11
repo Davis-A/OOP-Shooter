@@ -4,22 +4,24 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Factory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Enemy.cs">
     <Files>
       <File FileName="src\GameMain.cs" Line="16" Column="4" />
-      <File FileName="src\Enemy.cs" Line="26" Column="20" />
-      <File FileName="src\GameObject.cs" Line="68" Column="3" />
+      <File FileName="src\GameObject.cs" Line="37" Column="30" />
       <File FileName="src\Bullet.cs" Line="11" Column="86" />
       <File FileName="src\Weapons\Weapon.cs" Line="21" Column="3" />
-      <File FileName="src\Weapons\PeaShooter.cs" Line="12" Column="24" />
+      <File FileName="src\Weapons\PeaShooter.cs" Line="15" Column="1" />
       <File FileName="src\Weapons\BigGun.cs" Line="13" Column="25" />
-      <File FileName="src\Factory.cs" Line="43" Column="69" />
-      <File FileName="src\PhysicsManager.cs" Line="40" Column="5" />
-      <File FileName="src\GraphicsManager.cs" Line="37" Column="35" />
+      <File FileName="src\Factory.cs" Line="31" Column="84" />
+      <File FileName="src\PhysicsManager.cs" Line="60" Column="1" />
+      <File FileName="src\GraphicsManager.cs" Line="27" Column="23" />
       <File FileName="src\Player.cs" Line="16" Column="3" />
-      <File FileName="src\GameManager.cs" Line="186" Column="36" />
+      <File FileName="src\GameManager.cs" Line="137" Column="77" />
       <File FileName="src\Ship.cs" Line="37" Column="4" />
-      <File FileName="src\TimeManager.cs" Line="33" Column="5" />
+      <File FileName="src\TimeManager.cs" Line="21" Column="1" />
+      <File FileName="src\BossOne.cs" Line="7" Column="114" />
+      <File FileName="src\MemoryManager.cs" Line="45" Column="35" />
+      <File FileName="src\Enemy.cs" Line="21" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

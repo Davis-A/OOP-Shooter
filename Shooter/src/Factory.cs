@@ -5,16 +5,14 @@ namespace MyGame
 {
 	public class Factory
 	{
-		private GameManager _world;
 		private static Factory _instance;
 		private Bitmap _enemybitmap;
 
-		public Factory (GameManager world)
+		public Factory ()
 		{
 			if (_instance == null) {
 				//load enemy bitmap
 				_enemybitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
-				_world = world;
 				_instance = this;
 			} else {
 				throw new Exception ("cannot have more than one instance of factory");
@@ -25,19 +23,24 @@ namespace MyGame
 		public void BuildEnemy (int hp, float x, float y, float deltaX, float deltaY)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			_world.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaX, deltaY));
+			MemoryManager.Instance.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaX, deltaY));
+		}
+
+		public void BuildBossOne () 
+		{
+			MemoryManager.Instance._boss1 = new BossOne (5, _enemybitmap, 200, 200, 0, 0);
 		}
 
 		public void BuildEnemy (int hp, float x, float y, List<DeltaMovement> deltaMovement)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			_world.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaMovement));
+			MemoryManager.Instance.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaMovement));
 		}
 
 		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr)
 		{
 			//(float x, float y, float deltaX, float deltaY, int radius, Color clr)
-			_world.AddBullet (new Bullet (x, y, deltaX, deltaY, radius, clr));
+			MemoryManager.Instance.AddBullet(new Bullet (x, y, deltaX, deltaY, radius, clr));
 		}
 
 		public static Factory Instance {

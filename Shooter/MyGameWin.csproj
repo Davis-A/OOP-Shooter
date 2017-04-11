@@ -49,13 +49,15 @@
     <Compile Include="src\Weapons\Weapon.cs" />
     <Compile Include="src\Weapons\PeaShooter.cs" />
     <Compile Include="src\Weapons\BigGun.cs" />
-    <Compile Include="src\Enemy.cs" />
+    <Compile Include="src\Drone.cs" />
     <Compile Include="src\Factory.cs" />
     <Compile Include="src\GraphicsManager.cs" />
     <Compile Include="src\PhysicsManager.cs" />
     <Compile Include="src\GameManager.cs" />
     <Compile Include="src\TimeManager.cs" />
     <Compile Include="src\DeltaMovement.cs" />
+    <Compile Include="src\BossOne.cs" />
+    <Compile Include="src\MemoryManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
