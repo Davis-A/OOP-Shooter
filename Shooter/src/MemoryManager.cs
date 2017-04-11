@@ -22,7 +22,7 @@ namespace MyGame
 				_bullets = new List<Bullet> ();
 
 				//create player
-				_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new PeaShooter ());
+				_player = new Player (2, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
 				_instance = this;
 			}
 			else 

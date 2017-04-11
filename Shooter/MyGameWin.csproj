@@ -39,6 +39,7 @@
     <Folder Include="src\" />
     <Folder Include="Resources\" />
     <Folder Include="src\Weapons\" />
+    <Folder Include="src\Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="src\BossOne.cs" />
     <Compile Include="src\MemoryManager.cs" />
     <Compile Include="src\Enemy.cs" />
+    <Compile Include="src\Tests\TestGameObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

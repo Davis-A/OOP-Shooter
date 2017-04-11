@@ -14,7 +14,7 @@
     <OutputType>WinExe</OutputType>
     <ApplicationIcon>Resources\SwinGame.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ApplicationManifest>BigGun.manifest</ApplicationManifest>
+    <ApplicationManifest>TestGameObject.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Windows|x86' ">
     <Optimize>false</Optimize>
@@ -40,6 +40,7 @@
     <Folder Include="src\" />
     <Folder Include="Resources\" />
     <Folder Include="src\Weapons\" />
+    <Folder Include="src\Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
@@ -50,6 +51,16 @@
     <Compile Include="src\Weapons\Weapon.cs" />
     <Compile Include="src\Weapons\PeaShooter.cs" />
     <Compile Include="src\Weapons\BigGun.cs" />
+    <Compile Include="src\Drone.cs" />
+    <Compile Include="src\Factory.cs" />
+    <Compile Include="src\GraphicsManager.cs" />
+    <Compile Include="src\PhysicsManager.cs" />
+    <Compile Include="src\GameManager.cs" />
+    <Compile Include="src\TimeManager.cs" />
+    <Compile Include="src\DeltaMovement.cs" />
+    <Compile Include="src\BossOne.cs" />
+    <Compile Include="src\MemoryManager.cs" />
+    <Compile Include="src\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

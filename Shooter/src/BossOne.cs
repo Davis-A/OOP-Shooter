@@ -12,8 +12,8 @@ namespace MyGame
 		{
 			
 			int speed = 2;
-			Double tx = MemoryManager.Instance.Player.X - X;
-			Double ty = MemoryManager.Instance.Player.Y - Y;
+			Double tx = MemoryManager.Instance.Player.X - (Sprite.Width/2) - X;
+			Double ty = MemoryManager.Instance.Player.Y - (Sprite.Height / 2) - Y;
 			Double dist = Math.Sqrt (tx * tx + ty * ty);
 			Double rad = Math.Atan2 (ty, tx);
 			Double angle = rad / Math.PI * 180;

@@ -7,11 +7,13 @@ namespace MyGame
 	public class GraphicsManager
 	{
 		private static GraphicsManager _instance;
+		private Bitmap _background;
 
 		public GraphicsManager ()
 		{
 			if (_instance == null) 
 			{
+				_background = SwinGame.LoadBitmap (@"background.jpg");
 				_instance = this;
 			} 
 			else 
@@ -27,7 +29,8 @@ namespace MyGame
 		public void Render () 
 		{
 			//Clear the screen and 
-			SwinGame.ClearScreen (Color.White);
+			SwinGame.ClearScreen (Color.Black);
+			SwinGame.DrawBitmap (_background, 0, 0);
 
 			foreach (Enemy e in MemoryManager.Instance.Enemies) 
 			{
@@ -45,5 +48,6 @@ namespace MyGame
 			//draw the screen
 			SwinGame.RefreshScreen (60);
 		}
+
 	}
 }
