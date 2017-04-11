@@ -58,6 +58,7 @@
     <Compile Include="src\DeltaMovement.cs" />
     <Compile Include="src\BossOne.cs" />
     <Compile Include="src\MemoryManager.cs" />
+    <Compile Include="src\Enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

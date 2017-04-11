@@ -94,7 +94,7 @@ namespace MyGame
 			//update player
 			MemoryManager.Instance.Player.Update ();
 			//update enemies
-			foreach (Enemy e in MemoryManager.Instance.Enemies) 
+			foreach (Drone e in MemoryManager.Instance.Enemies) 
 			{
 				e.Update ();
 			}

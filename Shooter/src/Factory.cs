@@ -23,7 +23,7 @@ namespace MyGame
 		public void BuildEnemy (int hp, float x, float y, float deltaX, float deltaY)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			MemoryManager.Instance.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaX, deltaY));
+			MemoryManager.Instance.AddEnemy (new Drone (hp, _enemybitmap, x, y, deltaX, deltaY));
 		}
 
 		public void BuildBossOne () 
@@ -34,7 +34,7 @@ namespace MyGame
 		public void BuildEnemy (int hp, float x, float y, List<DeltaMovement> deltaMovement)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			MemoryManager.Instance.AddEnemy (new Enemy (hp, _enemybitmap, x, y, deltaMovement));
+			MemoryManager.Instance.AddEnemy (new Drone (hp, _enemybitmap, x, y, deltaMovement));
 		}
 
 		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr)

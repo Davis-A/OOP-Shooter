@@ -29,7 +29,7 @@ namespace MyGame
 			//Clear the screen and 
 			SwinGame.ClearScreen (Color.White);
 
-			foreach (Enemy e in MemoryManager.Instance.Enemies) 
+			foreach (Drone e in MemoryManager.Instance.Enemies) 
 			{
 				e.Render ();
 			}

@@ -10,7 +10,7 @@ namespace MyGame
 
 		//gameobject lists
 		private List<Bullet> _bullets;
-		private List<Enemy> _enemies;
+		private List<Drone> _enemies;
 		private Player _player;
 		public BossOne _boss1;
 
@@ -19,7 +19,7 @@ namespace MyGame
 			if (_instance == null) 
 			{
 				//create enemy and bullet lists
-				_enemies = new List<Enemy> ();
+				_enemies = new List<Drone> ();
 				_bullets = new List<Bullet> ();
 
 				//create player
@@ -53,18 +53,18 @@ namespace MyGame
 			_bullets.Remove (b);
 		}
 
-		public List<Enemy> Enemies 
+		public List<Drone> Enemies 
 		{
 			get { return _enemies; }
 		}
 
-		public void DespawnEnemy (Enemy e) 
+		public void DespawnEnemy (Drone e) 
 		{
 			_enemies.Remove (e);
 		}
 
 		//using a method.  I don't what anything other than the world being able to do things with the enemy list.  When it comes to rendering i will have GameManager create a list of every Game object 
-		public void AddEnemy (Enemy e)
+		public void AddEnemy (Drone e)
 		{
 			_enemies.Add (e);
 		}
