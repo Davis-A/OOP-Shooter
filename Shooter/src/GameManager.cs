@@ -43,7 +43,7 @@ namespace MyGame
 			//temporary commands
 
 
-
+			//Factory.Instance.PhaseTwo ();
 			//Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
 
 
