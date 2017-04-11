@@ -36,12 +36,6 @@ namespace MyGame
 			_hp = _hp - 1;
 		}
 
-		public override void Update () 
-		{
-			base.Update ();
-			SetCollisionBoxLocation (X, Y);
-		}
-
 		public void Freebmp ()  
 		{
 			SwinGame.FreeBitmap (_sprite);

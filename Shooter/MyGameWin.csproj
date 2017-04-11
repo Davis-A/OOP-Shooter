@@ -53,8 +53,8 @@
     <Compile Include="src\Factory.cs" />
     <Compile Include="src\GraphicsManager.cs" />
     <Compile Include="src\PhysicsManager.cs" />
-    <Compile Include="TimeManager.cs" />
     <Compile Include="src\GameManager.cs" />
+    <Compile Include="src\TimeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

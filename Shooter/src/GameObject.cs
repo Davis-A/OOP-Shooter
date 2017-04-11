@@ -34,6 +34,8 @@ namespace MyGame
 		{
 			X += DeltaX;
 			Y += DeltaY;
+			_collisionBox.X += DeltaX;
+			_collisionBox.Y += DeltaY;
 		}
 		public abstract void Render ();
 
@@ -62,13 +64,8 @@ namespace MyGame
 			set { _deltaY = value; }
 		}
 
-		public void SetCollisionBoxLocation (float x, float y)
+		public Rectangle CollisionBox 
 		{
-			_collisionBox.X = x;
-			_collisionBox.Y = y;
-		}
-
-		public Rectangle CollisionBox {
 			get { return _collisionBox; }
 		}
 	}

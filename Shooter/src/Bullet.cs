@@ -24,12 +24,6 @@ namespace MyGame
 			}
 		}
 
-		public override void Update ()
-		{
-			base.Update ();
-			SetCollisionBoxLocation (X-Radius, Y-Radius);
-		}
-
 		public int Radius 
 		{
 			get { return _radius; }
