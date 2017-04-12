@@ -99,8 +99,6 @@ namespace MyGame
 			//test they haven't changed
 			Assert.AreEqual (_drone.DeltaX, 1);
 			Assert.AreEqual (_drone.DeltaY, 2);
-
-
 		}
 
 
