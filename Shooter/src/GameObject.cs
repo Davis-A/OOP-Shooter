@@ -4,7 +4,7 @@ namespace MyGame
 {
 
 
-	public abstract class GameObject
+	public abstract class GameObject : Collidable
 	{
 		public static Rectangle CreateCollisionBox (float x, float y, int height, int width)
 		{
@@ -37,6 +37,10 @@ namespace MyGame
 			_collisionBox.X += DeltaX;
 			_collisionBox.Y += DeltaY;
 		}
+
+		public abstract void HasCollided ();
+
+
 		public abstract void Render ();
 
 		public float X 

@@ -14,6 +14,15 @@ namespace MyGame
 			_speed = 5;
 		}
 
+		public override void HasCollided ()
+		{
+			RemoveHp ();
+			if (HP < 1) 
+			{
+				throw new NotImplementedException ();
+			}
+		}
+
 		public Weapon Weapon 
 		{
 			get { return _weapon; }

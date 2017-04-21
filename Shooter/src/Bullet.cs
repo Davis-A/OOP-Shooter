@@ -14,6 +14,11 @@ namespace MyGame
 			_clr = clr;
 		}
 
+		public override void HasCollided ()
+		{
+			MemoryManager.Instance.DespawnBullet (this);
+		}
+
 		public override void Render ()
 		{
 			SwinGame.FillCircle (_clr, X, Y, _radius);

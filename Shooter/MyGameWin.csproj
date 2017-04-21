@@ -61,6 +61,7 @@
     <Compile Include="src\MemoryManager.cs" />
     <Compile Include="src\Enemy.cs" />
     <Compile Include="src\Tests\TestGameObject.cs" />
+    <Compile Include="src\Collidable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

@@ -106,23 +106,11 @@ namespace MyGame
 			}
 
 			PhysicsManager.Instance.CollisionHandler ();
-			IsEnemyDead ();
 
 
 			//outside area despawn
 			IsBulletsOutOfBounds ();
 			IsEnemyOutOfBounds ();
-		}
-
-		private void IsEnemyDead () 
-		{
-			for (int i = MemoryManager.Instance.Enemies.Count - 1; i >= 0; i--) 
-			{
-				if (MemoryManager.Instance.Enemies[i].HP <= 0) 
-				{
-					MemoryManager.Instance.DespawnEnemy(MemoryManager.Instance.Enemies[i]);
-				}
-			}
 		}
 
 

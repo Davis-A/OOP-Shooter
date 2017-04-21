@@ -29,14 +29,14 @@ namespace MyGame
 
 			//delete bullets that have collided
 
-			foreach (Enemy e in MemoryManager.Instance.Enemies)
+			for (int l = MemoryManager.Instance.Enemies.Count - 1; l >= 0; l--)
 			{
 				for (int i = MemoryManager.Instance.Bullets.Count - 1; i>= 0; i--) 
 				{
-					if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) {
+					if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Enemies[l].CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) {
 						//Console.WriteLine ("bullet enemy collision detected");
-						MemoryManager.Instance.Bullets.Remove (MemoryManager.Instance.Bullets [i]);
-						e.RemoveHp ();
+						MemoryManager.Instance.Bullets [i].HasCollided ();
+						MemoryManager.Instance.Enemies [l].HasCollided ();
 					}
 				}
 			}

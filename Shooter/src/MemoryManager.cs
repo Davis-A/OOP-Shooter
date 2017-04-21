@@ -6,7 +6,7 @@ namespace MyGame
 {
 	public class MemoryManager
 	{
-		public static MemoryManager _instance;
+		private static MemoryManager _instance;
 
 		//gameobject lists
 		private List<Bullet> _bullets;
