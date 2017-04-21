@@ -4,12 +4,12 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Factory.cs">
     <Files>
       <File FileName="src\PhysicsManager.cs" Line="39" Column="57" />
-      <File FileName="src\Player.cs" Line="22" Column="21" />
-      <File FileName="src\GameManager.cs" Line="112" Column="28" />
-      <File FileName="src\Ship.cs" Line="31" Column="3" />
+      <File FileName="src\Player.cs" Line="22" Column="42" />
+      <File FileName="src\GameManager.cs" Line="25" Column="42" />
+      <File FileName="src\Ship.cs" Line="25" Column="4" />
       <File FileName="src\TimeManager.cs" Line="7" Column="26" />
       <File FileName="src\MemoryManager.cs" Line="9" Column="11" />
       <File FileName="src\Enemy.cs" Line="14" Column="1" />
@@ -17,7 +17,8 @@
       <File FileName="src\Collidable.cs" Line="9" Column="2" />
       <File FileName="src\Bullet.cs" Line="19" Column="48" />
       <File FileName="src\GameObject.cs" Line="41" Column="24" />
-      <File FileName="src\GameMain.cs" Line="18" Column="54" />
+      <File FileName="src\GameMain.cs" Line="16" Column="4" />
+      <File FileName="src\Factory.cs" Line="16" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />
