@@ -28,14 +28,19 @@ namespace MyGame
 		{
 
 			//delete bullets that have collided
-
+			bool removeShip;
 			for (int l = MemoryManager.Instance.Enemies.Count - 1; l >= 0; l--)
 			{
+				removeShip = false;
 				for (int i = MemoryManager.Instance.Bullets.Count - 1; i>= 0; i--) 
 				{
 					if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Enemies[l].CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) {
 						//Console.WriteLine ("bullet enemy collision detected");
 						MemoryManager.Instance.Bullets [i].HasCollided ();
+						removeShip = true;
+					}
+					if (removeShip) 
+					{
 						MemoryManager.Instance.Enemies [l].HasCollided ();
 					}
 				}

@@ -62,6 +62,10 @@
     <Compile Include="src\Enemy.cs" />
     <Compile Include="src\Tests\TestGameObject.cs" />
     <Compile Include="src\Collidable.cs" />
+    <Compile Include="src\StandardPhase.cs" />
+    <Compile Include="Phase.cs" />
+    <Compile Include="src\ExtensionMethods.cs" />
+    <Compile Include="src\BossOnePhase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

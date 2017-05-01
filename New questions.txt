@@ -1,3 +1,10 @@
+Reset();  Create a reset method in each singleton where they empty their lists and set everything back to it's original state when they were created.
+
+
+
+
+
+
 Sound.  Should i make something akin to the Graphics Manager
 	This could be challenging 
 
