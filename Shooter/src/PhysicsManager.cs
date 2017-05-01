@@ -50,7 +50,7 @@ namespace MyGame
 			foreach (Enemy e in MemoryManager.Instance.Enemies) {
 				if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Player.CollisionBox)) {
 					//Console.WriteLine ("player enemy collision detected");
-					MemoryManager.Instance.Player.RemoveHp ();
+					MemoryManager.Instance.Player.HasCollided ();
 				}
 			}
 		}

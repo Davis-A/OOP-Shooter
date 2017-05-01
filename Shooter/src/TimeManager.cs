@@ -13,7 +13,6 @@ namespace MyGame
 			if (_instance == null) {
 				_phases =  new List<Phase>();
 				GeneratePhase ();
-				//TODO implement phase list
 				_instance = this;
 			} else 
 			{

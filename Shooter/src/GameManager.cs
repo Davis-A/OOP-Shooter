@@ -111,6 +111,17 @@ namespace MyGame
 			//outside area despawn
 			IsBulletsOutOfBounds ();
 			IsEnemyOutOfBounds ();
+			CheckPlayerIsAlive ();
+		}
+
+		private void CheckPlayerIsAlive () 
+		{
+			if (MemoryManager.Instance.Player.HP < 0) 
+			{
+				//TODO create a reset method to reset the game field.
+				Console.WriteLine ("Player dead, time to reset");
+			}
+
 		}
 
 

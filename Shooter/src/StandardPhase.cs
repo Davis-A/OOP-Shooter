@@ -8,7 +8,6 @@ namespace MyGame
 	{
 		private StreamReader _reader;
 
-		//TODO handle spawning of things that are unusual.  Ie a boss may not have a predetermined movement pattern.  Perhaps an isBoss boolean?
 
 		public StandardPhase (int timer, string instructionFile) : base(timer)
 		{
