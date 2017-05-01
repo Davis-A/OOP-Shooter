@@ -4,16 +4,17 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\BossOnePhase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\BossOne.cs">
     <Files>
-      <File FileName="src\TimeManager.cs" Line="32" Column="4" />
-      <File FileName="src\Factory.cs" Line="101" Column="4" />
-      <File FileName="src\StandardPhase.cs" Line="3" Column="17" />
-      <File FileName="Phase.cs" Line="10" Column="19" />
+      <File FileName="src\TimeManager.cs" Line="32" Column="41" />
+      <File FileName="src\Factory.cs" Line="49" Column="3" />
+      <File FileName="src\StandardPhase.cs" Line="24" Column="23" />
+      <File FileName="Phase.cs" Line="15" Column="9" />
       <File FileName="src\GameMain.cs" Line="17" Column="23" />
       <File FileName="src\ExtensionMethods.cs" Line="20" Column="4" />
       <File FileName="src\PhysicsManager.cs" Line="40" Column="25" />
-      <File FileName="src\BossOnePhase.cs" Line="6" Column="37" />
+      <File FileName="src\BossOnePhase.cs" Line="12" Column="37" />
+      <File FileName="src\BossOne.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />
