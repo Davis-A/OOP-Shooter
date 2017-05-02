@@ -4,7 +4,6 @@ namespace MyGame
 {
 	public class Player : Ship
 	{
-		
 		private Weapon _weapon;
 		private float _speed;
 		private bool isImmune;

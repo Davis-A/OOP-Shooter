@@ -21,10 +21,7 @@ namespace MyGame
 				throw new Exception ("cannot have more than one instance of GraphicsManager");
 			}
 		}
-		public static GraphicsManager Instance 
-		{
-			get { return _instance; }
-		}
+
 
 		public void Render () 
 		{
@@ -47,6 +44,10 @@ namespace MyGame
 			SwinGame.DrawFramerate (0, 0);
 			//draw the screen
 			SwinGame.RefreshScreen (60);
+		}
+
+		public static GraphicsManager Instance {
+			get { return _instance; }
 		}
 
 	}

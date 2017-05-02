@@ -31,9 +31,7 @@ namespace MyGame
 			_phases.Add (new BossOnePhase (300));
 		}
 
-		public static TimeManager Instance {
-			get { return _instance; }
-		}
+
 
 		public void ResetTimeManager () 
 		{
@@ -70,6 +68,11 @@ namespace MyGame
 			}
 
 			*/
+		}
+
+		public static TimeManager Instance 
+		{
+			get { return _instance; }
 		}
 	}
 }

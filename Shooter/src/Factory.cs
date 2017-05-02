@@ -6,24 +6,17 @@ namespace MyGame
 	public class Factory
 	{
 		private static Factory _instance;
-		private Bitmap _enemybitmap;
+		private Bitmap _dronebitmap;
 
 		public Factory ()
 		{
 			if (_instance == null) {
 				//load enemy bitmap
-				_enemybitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
+				_dronebitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
 				_instance = this;
 			} else {
 				throw new Exception ("cannot have more than one instance of factory");
 			}
-		}
-
-		//toDelete
-		public void BuildEnemy (int hp, float x, float y, float deltaX, float deltaY)
-		{
-			//(int hp, string bmpPath, float x, float y, float deltaX)
-			MemoryManager.Instance.AddEnemy (new Drone (hp, _enemybitmap, x, y, deltaX, deltaY));
 		}
 
 		public void BuildBossOne () 
@@ -34,7 +27,7 @@ namespace MyGame
 		public void BuildEnemy (int hp, float x, float y, List<DeltaMovement> deltaMovement)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)
-			MemoryManager.Instance.AddEnemy (new Drone (hp, _enemybitmap, x, y, deltaMovement));
+			MemoryManager.Instance.AddEnemy (new Drone (hp, _dronebitmap, x, y, deltaMovement));
 		}
 
 		public Player BuildPlayer () 
