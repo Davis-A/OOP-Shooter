@@ -1,0 +1,27 @@
+Classes:
+
+GameManager
+
+GraphicsManager		--singleton
+
+MemoryManager		--singleton
+
+PhysicsManager		--singleton
+
+TimeManager		--singleton
+
+
+_______________________________________________
+
+Interfaces:
+Collidable --isCollidable
+
+_______________________________________________
+
+Structs:
+DeltaMovement
+
+_______________________________________________
+
+ExtensionMethods:
+Reader

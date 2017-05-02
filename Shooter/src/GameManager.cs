@@ -127,7 +127,6 @@ namespace MyGame
 		{
 			TimeManager.Instance.ResetTimeManager ();
 			MemoryManager.Instance.ResetMemoryManager ();
-			//TODO implement reset calls for singleton
 		}
 
 
