@@ -6,6 +6,19 @@ namespace MyGame
 {
 	public class StandardPhase : Phase
 	{
+
+			/*
+			 * A standardPhase spawns drones.  
+			 * Drones have an x,y starting position
+			 * Drones have a list of Deltamovements (struct intx,inty)
+			 * Their details are stored in a csv file which is passed to this objects constructor
+			 * Format for the CSV file where each line represents one drone.  
+			 * There is no limit to how many lines and thus how many drone per phase
+			 * The format for each drone line is
+			 * initial X position, initial Y position, deltaX1, deltaY1, deltaX2, deltaY2
+			 * The amount of delta movements is unlimited and all will be read from a line
+			 */
+
 		private StreamReader _reader;
 
 
@@ -19,6 +32,9 @@ namespace MyGame
 
 		protected override void StartPhase () 
 		{
+
+
+
 			List<DeltaMovement> dxdylist = new List<DeltaMovement> ();
 			DeltaMovement dxdy;
 			//
@@ -35,7 +51,7 @@ namespace MyGame
 					dxdylist.Add (dxdy);
 				}
 
-				Factory.Instance.BuildEnemy (1, enemyData [0], enemyData [1], dxdylist);
+				Factory.Instance.BuildDrone (1, enemyData [0], enemyData [1], dxdylist);
 				enemyData = _reader.ReadCSVInt ();
 			}
 

@@ -12,7 +12,7 @@ namespace MyGame
 
 		}
 
-		public bool Update ()
+		public bool Tick ()
 		{
 			DecrementTimer ();
 			if (Timer < 0) {

@@ -16,10 +16,6 @@ namespace MyGame
 
 		}
 
-		//to be deleted.  This is just a simple constructor used for testing without the need for a delta movement struct.
-		public Drone (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (hp,sprite,x,y, deltaX, deltaY)
-		{
-		}
 
 		public override void Update ()
 		{

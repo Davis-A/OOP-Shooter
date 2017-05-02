@@ -6,15 +6,7 @@ namespace MyGame
 
 	public abstract class GameObject : Collidable
 	{
-		public static Rectangle CreateCollisionBox (float x, float y, int height, int width)
-		{
-			Rectangle collisionBox = new Rectangle();
-			collisionBox.X = x;
-			collisionBox.Y = y;
-			collisionBox.Height = height;
-			collisionBox.Width = width;
-			return collisionBox;
-		}
+
 
 		private float _x;
 		private float _y;
@@ -30,6 +22,17 @@ namespace MyGame
 			_deltaY = deltaY;
 			_collisionBox = collisionBox;
 		}
+
+		public static Rectangle CreateCollisionBox (float x, float y, int height, int width)
+		{
+			Rectangle collisionBox = new Rectangle ();
+			collisionBox.X = x;
+			collisionBox.Y = y;
+			collisionBox.Height = height;
+			collisionBox.Width = width;
+			return collisionBox;
+		}
+
 		public virtual void Update () 
 		{
 			X += DeltaX;

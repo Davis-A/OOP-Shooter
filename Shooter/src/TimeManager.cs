@@ -48,7 +48,7 @@ namespace MyGame
 			 */
 			if (_phases.Count != 0) 
 			{
-				if (_phases [0].Update ()) 
+				if (_phases [0].Tick ()) 
 				{
 					_phases.Remove (_phases [0]);
 				}
