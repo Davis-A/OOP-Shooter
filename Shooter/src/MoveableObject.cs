@@ -2,19 +2,15 @@
 using SwinGameSDK;
 namespace MyGame
 {
-
-
-	public abstract class GameObject : Collidable
+	public abstract class MoveableObject : Collidable
 	{
-
-
 		private float _x;
 		private float _y;
 		private float _deltaX;
 		private float _deltaY;
 		private Rectangle _collisionBox;
 
-		public GameObject (float x,float y,float deltaX,float deltaY, Rectangle collisionBox)
+		public MoveableObject (float x,float y,float deltaX,float deltaY, Rectangle collisionBox)
 		{
 			_x = x;
 			_y = y;

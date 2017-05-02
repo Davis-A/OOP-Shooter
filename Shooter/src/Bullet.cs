@@ -2,7 +2,7 @@
 using SwinGameSDK;
 namespace MyGame
 {
-	public class Bullet : GameObject
+	public class Bullet : MoveableObject
 	{
 
 		private int _radius;

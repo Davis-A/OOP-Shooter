@@ -45,7 +45,7 @@
     <Compile Include="src\GameMain.cs" />
     <Compile Include="src\Ship.cs" />
     <Compile Include="src\Player.cs" />
-    <Compile Include="src\GameObject.cs" />
+    <Compile Include="src\MoveableObject.cs" />
     <Compile Include="src\Bullet.cs" />
     <Compile Include="src\Weapons\Weapon.cs" />
     <Compile Include="src\Weapons\PeaShooter.cs" />

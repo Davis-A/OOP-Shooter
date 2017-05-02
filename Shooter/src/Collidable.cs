@@ -5,9 +5,4 @@ namespace MyGame
 	{
 		void HasCollided ();
 	}
-
-
-
-
-
 }
