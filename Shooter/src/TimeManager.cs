@@ -35,6 +35,12 @@ namespace MyGame
 			get { return _instance; }
 		}
 
+		public void ResetTimeManager () 
+		{
+			_phases.Clear ();
+			GeneratePhase ();
+		}
+
 		public void TimeRun ()
 		{
 			/*

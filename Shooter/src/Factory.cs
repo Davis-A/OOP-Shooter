@@ -37,6 +37,11 @@ namespace MyGame
 			MemoryManager.Instance.AddEnemy (new Drone (hp, _enemybitmap, x, y, deltaMovement));
 		}
 
+		public Player BuildPlayer () 
+		{
+			return new Player (1, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
+		}
+
 		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr)
 		{
 			//(float x, float y, float deltaX, float deltaY, int radius, Color clr)

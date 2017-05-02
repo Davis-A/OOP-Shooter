@@ -17,12 +17,7 @@ namespace MyGame
 		{
 			if (_instance == null) 
 			{
-				//create enemy and bullet lists
-				_enemies = new List<Enemy> ();
-				_bullets = new List<Bullet> ();
-
-				//create player
-				_player = new Player (1, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
+				ResetMemoryManager ();
 				_instance = this;
 			}
 			else 
@@ -30,6 +25,15 @@ namespace MyGame
 				throw new Exception ("cannot have more than one instance of Time Manager");
 			}
 		}
+
+		public void ResetMemoryManager () 
+		{
+			_enemies = new List<Enemy> ();
+			_bullets = new List<Bullet> ();
+			//create player
+			_player = Factory.Instance.BuildPlayer ();
+		}
+
 
 		public static MemoryManager Instance 
 		{

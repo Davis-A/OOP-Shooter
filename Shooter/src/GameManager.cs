@@ -118,10 +118,16 @@ namespace MyGame
 		{
 			if (MemoryManager.Instance.Player.HP < 0) 
 			{
-				//TODO create a reset method to reset the game field.
-				Console.WriteLine ("Player dead, time to reset");
+				ResetGame ();
 			}
 
+		}
+
+		private void ResetGame () 
+		{
+			TimeManager.Instance.ResetTimeManager ();
+			MemoryManager.Instance.ResetMemoryManager ();
+			//TODO implement reset calls for singleton
 		}
 
 
