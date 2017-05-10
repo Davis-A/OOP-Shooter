@@ -28,6 +28,15 @@ namespace MyGame
 			//Clear the screen and 
 			SwinGame.ClearScreen (Color.Black);
 			SwinGame.DrawBitmap (_background, 0, 0);
+			/*
+			 * Comments on polymorphism:  
+			 * While enemies, bullets and Player are all Moveable objects which have a Draw() method.  
+			 * Due to how the memory manager groups them in different lists.
+			 * I could have created a property in MemoryManager to concatenate all the lists of objects that can be drawn
+			 * I decided against this as the cost of concatonating the list and potentailly checking for differences between it
+			 * and the individual lists (or contatonating it again) each loop would be expensive.
+			 */
+
 
 			foreach (Enemy e in MemoryManager.Instance.Enemies) 
 			{

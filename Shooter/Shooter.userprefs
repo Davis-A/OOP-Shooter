@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GraphicsManager.cs">
     <Files>
       <File FileName="src\TimeManager.cs" Line="55" Column="5" />
       <File FileName="src\Phase.cs" Line="15" Column="19" />
@@ -17,7 +17,9 @@
       <File FileName="src\BossOne.cs" Line="1" Column="1" />
       <File FileName="src\DeltaMovement.cs" Line="1" Column="1" />
       <File FileName="src\Collidable.cs" Line="7" Column="3" />
-      <File FileName="src\GameObject.cs" Line="5" Column="27" />
+      <File FileName="src\PhysicsManager.cs" Line="45" Column="41" />
+      <File FileName="src\MoveableObject.cs" Line="27" Column="33" />
+      <File FileName="src\GraphicsManager.cs" Line="37" Column="89" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

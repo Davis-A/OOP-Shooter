@@ -7,6 +7,7 @@ namespace MyGame
 		private int _hp;
 		private Bitmap _sprite;
 
+		//public Ship (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base ()
 		public Ship (int hp, Bitmap sprite, float x, float y, float deltaX, float deltaY) : base (x, y, deltaX, deltaY, CreateCollisionBox(x,y,sprite.Height,sprite.Width))
 		{
 			_hp = hp;
@@ -20,7 +21,7 @@ namespace MyGame
 
 			if (GameMain.DEBUG)
 			{
-				SwinGame.DrawRectangle (SwinGame.ColorBlack (), CollisionBox.X, CollisionBox.Y, CollisionBox.Width, CollisionBox.Height);
+				SwinGame.DrawRectangle (SwinGame.ColorWhite (), CollisionBox.X, CollisionBox.Y, CollisionBox.Width, CollisionBox.Height);
 			}
 		}
 

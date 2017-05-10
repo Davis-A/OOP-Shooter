@@ -27,31 +27,39 @@ namespace MyGame
 		public void CollisionHandler ()
 		{
 
-			//delete bullets that have collided
-			bool removeShip;
+			/*
+			 * Iterate over enemy list
+			 * check if they collide with bullets
+			 * If collision detected bullet handles its own collision immediately
+			 * Enemy is set to check handle collision at end of loop
+			 * Enemy and player checked for collision
+			 * if collision detected, player handles own collision immediately
+			 * If enemy bullet collision detected, enemy handles collision at end of loop
+			 */
+			bool removeEnemy;
 			for (int l = MemoryManager.Instance.Enemies.Count - 1; l >= 0; l--)
 			{
-				removeShip = false;
+				removeEnemy = false;
 				for (int i = MemoryManager.Instance.Bullets.Count - 1; i>= 0; i--) 
 				{
-					if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Enemies[l].CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) {
+					if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Enemies[l].CollisionBox, MemoryManager.Instance.Bullets[i].CollisionBox)) 
+					{
 						//Console.WriteLine ("bullet enemy collision detected");
 						MemoryManager.Instance.Bullets [i].HasCollided ();
-						removeShip = true;
+						removeEnemy = true;
 					}
-					if (removeShip) 
-					{
-						MemoryManager.Instance.Enemies [l].HasCollided ();
-					}
+				
 				}
-			}
-
-
-			foreach (Enemy e in MemoryManager.Instance.Enemies) {
-				if (SwinGame.RectanglesIntersect (e.CollisionBox, MemoryManager.Instance.Player.CollisionBox)) {
+				if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Enemies [l].CollisionBox, MemoryManager.Instance.Player.CollisionBox)) {
 					//Console.WriteLine ("player enemy collision detected");
 					MemoryManager.Instance.Player.HasCollided ();
 				}
+
+
+				if (removeEnemy) {
+					MemoryManager.Instance.Enemies [l].HasCollided ();
+				}
+
 			}
 		}
 
