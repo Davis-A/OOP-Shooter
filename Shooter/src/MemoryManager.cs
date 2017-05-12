@@ -4,6 +4,11 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	//TODO Make adding bullets and enemies consistent with their own AddBullet() AddEnemy() methods.  Ensure these methods are the only way to add to list.
+	//todo add a renderable list.  Then when AddBullet() AddEnemy() are called they are they also add the item to the renderable list.  When it's time to despawn them, have DespawnBullet() DespawnEnemy() remove them from both lists
+	//This allows a single draw call to draw "renderable objects" instead of the numerous ones i have now.
+
+
 	public class MemoryManager
 	{
 		private static MemoryManager _instance;
