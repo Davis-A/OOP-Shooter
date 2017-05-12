@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Tests\TestGameObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameMain.cs">
     <Files>
       <File FileName="src\TimeManager.cs" Line="79" Column="1" />
       <File FileName="src\Phase.cs" Line="15" Column="19" />
@@ -28,6 +28,7 @@
       <File FileName="src\GameManager.cs" Line="76" Column="131" />
       <File FileName="src\Weapons\PeaShooter.cs" Line="13" Column="4" />
       <File FileName="src\Tests\TestGameObject.cs" Line="20" Column="4" />
+      <File FileName="src\GameMain.cs" Line="9" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

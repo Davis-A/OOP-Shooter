@@ -6,7 +6,7 @@ namespace MyGame
 {
     public class GameMain
     {
-		public static bool DEBUG = true;
+		public static bool DEBUG = false;
 		public static void Main()
         {
 			GameManager game = new GameManager ();
