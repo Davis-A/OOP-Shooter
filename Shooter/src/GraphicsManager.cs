@@ -25,9 +25,22 @@ namespace MyGame
 
 		public void Render () 
 		{
+			
+
 			//Clear the screen and 
 			SwinGame.ClearScreen (Color.Black);
 			SwinGame.DrawBitmap (_background, 0, 0);
+
+			foreach (Renderable r in MemoryManager.Instance.Renderable) 
+			{
+				r.Render ();
+			}
+
+			MemoryManager.Instance.Player.Render ();
+
+
+
+			 //Old implementation:
 			/*
 			 * Comments on polymorphism:  
 			 * While enemies, bullets and Player are all Moveable objects which have a Draw() method.  
@@ -37,7 +50,7 @@ namespace MyGame
 			 * and the individual lists (or contatonating it again) each loop would be expensive.
 			 */
 
-
+			/*
 			foreach (Enemy e in MemoryManager.Instance.Enemies) 
 			{
 				e.Render ();
@@ -47,13 +60,17 @@ namespace MyGame
 				b.Render ();
 			}
 
-			MemoryManager.Instance.Player.Render ();
+			*/
+
 
 			//draw the framerate
 			SwinGame.DrawFramerate (0, 0);
 			//draw the screen
 			SwinGame.RefreshScreen (60);
+
+
 		}
+
 
 		public static GraphicsManager Instance {
 			get { return _instance; }

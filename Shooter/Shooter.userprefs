@@ -4,23 +4,25 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\MemoryManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\MoveableObject.cs">
     <Files>
-      <File FileName="src\TimeManager.cs" Line="55" Column="5" />
+      <File FileName="src\TimeManager.cs" Line="79" Column="1" />
       <File FileName="src\Phase.cs" Line="15" Column="19" />
       <File FileName="src\StandardPhase.cs" Line="20" Column="7" />
       <File FileName="src\Factory.cs" Line="27" Column="25" />
       <File FileName="src\BossOnePhase.cs" Line="1" Column="1" />
       <File FileName="src\ExtensionMethods.cs" Line="1" Column="1" />
-      <File FileName="src\Enemy.cs" Line="8" Column="4" />
+      <File FileName="src\Enemy.cs" Line="17" Column="48" />
       <File FileName="src\Drone.cs" Line="8" Column="31" />
       <File FileName="src\BossOne.cs" Line="1" Column="1" />
       <File FileName="src\DeltaMovement.cs" Line="1" Column="1" />
-      <File FileName="src\Collidable.cs" Line="7" Column="3" />
       <File FileName="src\PhysicsManager.cs" Line="45" Column="41" />
-      <File FileName="src\MoveableObject.cs" Line="27" Column="33" />
+      <File FileName="src\MoveableObject.cs" Line="4" Column="2" />
       <File FileName="src\GraphicsManager.cs" Line="40" Column="4" />
-      <File FileName="src\MemoryManager.cs" Line="7" Column="47" />
+      <File FileName="src\MemoryManager.cs" Line="20" Column="3" />
+      <File FileName="src\Bullet.cs" Line="1" Column="1" />
+      <File FileName="src\Collidable.cs" Line="7" Column="3" />
+      <File FileName="src\Renderable.cs" Line="6" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

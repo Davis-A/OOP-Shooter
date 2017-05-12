@@ -17,6 +17,8 @@ namespace MyGame
 		private List<Bullet> _bullets;
 		private List<Enemy> _enemies;
 		private Player _player;
+		private List<Renderable> _renderables;
+
 
 		public MemoryManager ()
 		{
@@ -35,6 +37,7 @@ namespace MyGame
 		{
 			_enemies = new List<Enemy> ();
 			_bullets = new List<Bullet> ();
+			_renderables = new List<Renderable> ();
 			//create player
 			_player = Factory.Instance.BuildPlayer ();
 		}
@@ -54,11 +57,13 @@ namespace MyGame
 		public void AddBullet (Bullet b)
 		{
 			_bullets.Add (b);
+			_renderables.Add (b);
 		}
 
 		public void DespawnBullet (Bullet b) 
 		{
 			_bullets.Remove (b);
+			_renderables.Remove (b);
 		}
 
 		public List<Enemy> Enemies 
@@ -69,17 +74,24 @@ namespace MyGame
 		public void DespawnEnemy (Enemy e) 
 		{
 			_enemies.Remove (e);
+			_renderables.Remove (e);
 		}
 
 		//using a method.  I don't what anything other than the world being able to do things with the enemy list.  When it comes to rendering i will have GameManager create a list of every Game object 
 		public void AddEnemy (Enemy e)
 		{
 			_enemies.Add (e);
+			_renderables.Add (e);
 		}
 
 		public Player Player 
 		{
 			get { return _player; }
+		}
+
+		public List<Renderable> Renderable 
+		{
+			get { return _renderables; }
 		}
 
 	}
