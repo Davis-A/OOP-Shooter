@@ -16,7 +16,7 @@ namespace MyGame
 			_speed = speed;
 		}
 
-		public abstract void Shoot (float x, float y);
+		public abstract void Shoot (float x, float y, Alignment align);
 
 
 		public Color CLR 

@@ -8,12 +8,14 @@ namespace MyGame
 		private float _speed;
 		private bool isImmune;
 		private int imunityTimer;
+		private Alignment _alignment;
 
 		public Player (int hp, Bitmap sprite, float x, float y, Weapon gun) : base(hp, sprite, x, y, 0, 0)
 		{
 			_weapon = gun;
 			_speed = 5;
 			isImmune = false;
+			_alignment = Alignment.Player;
 		}
 
 		public override void HasCollided ()
@@ -50,6 +52,11 @@ namespace MyGame
 		{
 			get { return _speed; }
 			set { _speed = value; }
+		}
+
+		public Alignment Alignment 
+		{
+			get { return _alignment; }
 		}
 	}
 }

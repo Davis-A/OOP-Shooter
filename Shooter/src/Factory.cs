@@ -35,10 +35,10 @@ namespace MyGame
 			return new Player (1, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
 		}
 
-		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr)
+		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr, Alignment align)
 		{
 			//(float x, float y, float deltaX, float deltaY, int radius, Color clr)
-			MemoryManager.Instance.AddBullet(new Bullet (x, y, deltaX, deltaY, radius, clr));
+			MemoryManager.Instance.AddBullet(new Bullet (x, y, deltaX, deltaY, radius, clr, align));
 		}
 
 		public static Factory Instance {

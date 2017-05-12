@@ -73,7 +73,7 @@ namespace MyGame
 
 			if (SwinGame.KeyTyped (KeyCode.SpaceKey) || SwinGame.MouseClicked (MouseButton.LeftButton) )
 			{
-				MemoryManager.Instance.Player.Weapon.Shoot (MemoryManager.Instance.Player.X, MemoryManager.Instance.Player.Y);
+				MemoryManager.Instance.Player.Weapon.Shoot (MemoryManager.Instance.Player.X, MemoryManager.Instance.Player.Y, Alignment.Player);
 			}
 
 			//Pause game

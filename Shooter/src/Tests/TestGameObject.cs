@@ -18,7 +18,7 @@ namespace MyGame
 		[Test]
 		public void TestMovementWhenDeltaZero () 
 		{
-			_bullet = new Bullet (0, 0, 0, 0, 50, SwinGameSDK.Color.Red);
+			_bullet = new Bullet (0, 0, 0, 0, 50, SwinGameSDK.Color.Red, Alignment.Player);
 			//loop a few times, it shouldn't have moved
 			for (int i = 0; i < 3; i++) 
 			{
@@ -31,7 +31,7 @@ namespace MyGame
 		[Test]
 		public void TestMovementDelta ()
 		{
-			_bullet = new Bullet (0, 0, 1, 3, 50, SwinGameSDK.Color.Red);
+			_bullet = new Bullet (0, 0, 1, 3, 50, SwinGameSDK.Color.Red, Alignment.Player);
 			//loop a few times, it shouldn't have moved
 			for (int i = 0; i < 3; i++) {
 				_bullet.Update ();
