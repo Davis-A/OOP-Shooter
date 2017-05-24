@@ -12,7 +12,7 @@ namespace MyGame
 
 		}
 
-		public bool Tick ()
+		public virtual bool Tick ()
 		{
 			DecrementTimer ();
 			if (Timer < 0) {

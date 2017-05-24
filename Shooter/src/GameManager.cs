@@ -12,9 +12,6 @@ namespace MyGame
 		private GraphicsManager _graphicsManager;
 		private MemoryManager _memoryManager;
 
-
-
-
 		public GameManager ()
 		{
 			//spawn singletons

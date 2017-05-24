@@ -24,6 +24,11 @@ namespace MyGame
 			MemoryManager.Instance.AddEnemy( new BossOne (5, SwinGame.LoadBitmap(@"sprites\BossOne.png"), SwinGame.ScreenWidth(), SwinGame.ScreenHeight()/2, 0, 0));
 		}
 
+		public void BuildBossTwo () 
+		{
+			MemoryManager.Instance.AddEnemy (new BossTwo (5, SwinGame.LoadBitmap (@"sprites\BossTwo.png"), SwinGame.ScreenWidth () - 200, SwinGame.ScreenHeight () + 200, 0, 5));
+		}
+
 		public void BuildDrone (int hp, float x, float y, List<DeltaMovement> deltaMovement)
 		{
 			//(int hp, string bmpPath, float x, float y, float deltaX)

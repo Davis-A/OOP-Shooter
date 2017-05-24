@@ -32,9 +32,6 @@ namespace MyGame
 
 		protected override void StartPhase () 
 		{
-
-
-
 			List<DeltaMovement> dxdylist = new List<DeltaMovement> ();
 			DeltaMovement dxdy;
 			//

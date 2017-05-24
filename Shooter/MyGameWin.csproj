@@ -68,6 +68,9 @@
     <Compile Include="src\Phase.cs" />
     <Compile Include="src\Renderable.cs" />
     <Compile Include="src\Alignment.cs" />
+    <Compile Include="src\waitPhase.cs" />
+    <Compile Include="src\BossTwo.cs" />
+    <Compile Include="src\BossTwoPhase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
