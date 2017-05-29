@@ -9,6 +9,7 @@ namespace MyGame
 		private bool isImmune;
 		private int imunityTimer;
 		private Alignment _alignment;
+		private int _score;
 
 		public Player (int hp, Bitmap sprite, float x, float y, Weapon gun) : base(hp, sprite, x, y, 0, 0)
 		{
@@ -16,7 +17,9 @@ namespace MyGame
 			_speed = 5;
 			isImmune = false;
 			_alignment = Alignment.Player;
+			_score = 0;
 		}
+
 
 		public override void HasCollided ()
 		{
@@ -40,6 +43,12 @@ namespace MyGame
 					isImmune = false;
 				}
 			}
+		}
+
+		public int Score 
+		{
+			get { return _score; }
+			set { _score = value; }
 		}
 
 

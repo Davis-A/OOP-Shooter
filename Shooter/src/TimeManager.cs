@@ -34,7 +34,7 @@ namespace MyGame
 			_phases.Add (new StandardPhase (25, @"C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\Phases\phase3.csv"));
 			_phases.Add (new StandardPhase (25, @"C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\Phases\phase3.csv"));
 			_phases.Add (new StandardPhase (25, @"C:\Users\andrew\Documents\Projects\CustomProgram\Shooter\Phases\phase3.csv"));
-			_phases.Add (new BossTwoPhase (60));
+			_phases.Add (new BossTwoPhase (150));
 		}
 
 

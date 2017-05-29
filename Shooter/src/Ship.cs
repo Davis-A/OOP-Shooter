@@ -30,11 +30,27 @@ namespace MyGame
 			get { return _sprite; }
 		}
 
-		//temp methods to stop crashing
+
+
+		public void RemoveHp (int remove) 
+		{
+			_hp = _hp - remove;
+		}
+
 
 		public void RemoveHp () 
 		{
-			_hp = _hp - 1;
+			RemoveHp (1);
+		}
+
+		public void AddHp (int add) 
+		{
+			_hp = _hp + add;
+		}
+
+		public void AddHp () 
+		{
+			AddHp (1);
 		}
 
 

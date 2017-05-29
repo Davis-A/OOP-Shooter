@@ -36,38 +36,36 @@ namespace MyGame
 				r.Render ();
 			}
 
+			RenderHUD ();
+			//Player is not included in renderable list because i always want it rendering after enemies and bullets.
 			MemoryManager.Instance.Player.Render ();
-
-
-
-			 //Old implementation:
-			/*
-			 * Comments on polymorphism:  
-			 * While enemies, bullets and Player are all Moveable objects which have a Draw() method.  
-			 * Due to how the memory manager groups them in different lists.
-			 * I could have created a property in MemoryManager to concatenate all the lists of objects that can be drawn
-			 * I decided against this as the cost of concatonating the list and potentailly checking for differences between it
-			 * and the individual lists (or contatonating it again) each loop would be expensive.
-			 */
-
-			/*
-			foreach (Enemy e in MemoryManager.Instance.Enemies) 
-			{
-				e.Render ();
-			}
-
-			foreach (Bullet b in MemoryManager.Instance.Bullets) {
-				b.Render ();
-			}
-
-			*/
-
-
 			//draw the framerate
 			SwinGame.DrawFramerate (0, 0);
 			//draw the screen
 			SwinGame.RefreshScreen (60);
 
+
+		}
+
+		private void RenderHUD () 
+		{
+			//hud box
+			SwinGame.FillRectangle (Color.Grey, 0, SwinGame.ScreenHeight () * 0.95f, SwinGame.ScreenWidth (), SwinGame.ScreenHeight () * 0.1f);
+			RenderPlayerLives ();
+			SwinGame.DrawText ("Score: " + MemoryManager.Instance.Player.Score, Color.White, SwinGame.ScreenWidth () * 0.8f, SwinGame.ScreenHeight () * .98f);
+		}
+
+		private void RenderPlayerLives ()
+		{
+			float offset = 0;
+			int i = 1;
+
+			while (i <= MemoryManager.Instance.Player.HP) 
+			{
+				i++;
+				SwinGame.FillTriangle (SwinGame.ColorGreen (), 30 + offset, SwinGame.ScreenHeight () - 25, 20 + offset, SwinGame.ScreenHeight () - 5, 40 + offset, SwinGame.ScreenHeight () - 5);
+				offset = offset + 22;
+			}
 
 		}
 

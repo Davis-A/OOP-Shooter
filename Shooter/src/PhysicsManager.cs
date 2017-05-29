@@ -53,6 +53,7 @@ namespace MyGame
 						{
 							bulletCollided = true;
 							enemyCollided = true;
+							MemoryManager.Instance.Player.Score = MemoryManager.Instance.Player.Score + 5;
 						}
 					}
 

@@ -37,7 +37,7 @@ namespace MyGame
 
 		public Player BuildPlayer () 
 		{
-			return new Player (1, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
+			return new Player (5, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
 		}
 
 		public void BuildBullet (float x, float y, float deltaX, float deltaY, int radius, Color clr, Alignment align)
