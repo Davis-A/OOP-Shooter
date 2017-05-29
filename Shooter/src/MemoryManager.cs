@@ -45,7 +45,14 @@ namespace MyGame
 
 		public static MemoryManager Instance 
 		{
-			get { return _instance; }
+			get 
+			{
+				if (_instance == null) 
+				{
+					_instance = new MemoryManager ();
+				}
+				return _instance;
+			}
 		}
 
 		public List<Bullet> Bullets 

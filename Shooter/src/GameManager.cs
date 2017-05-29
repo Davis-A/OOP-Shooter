@@ -5,37 +5,8 @@ namespace MyGame
 {
 	public class GameManager
 	{
-		//singletons
-		private Factory _factory;
-		private TimeManager _timeManager;
-		private PhysicsManager _physicsManager;
-		private GraphicsManager _graphicsManager;
-		private MemoryManager _memoryManager;
-
 		public GameManager ()
 		{
-			//spawn singletons
-			_factory = new Factory ();
-			_timeManager = new TimeManager ();
-			_physicsManager = new PhysicsManager ();
-			_graphicsManager = new GraphicsManager ();
-			_memoryManager = new MemoryManager ();
-		}
-
-
-		//primary functions
-
-		public void Init () 
-		{
-			//do something?  maybe open the window?
-
-			//temporary commands
-			//Factory.Instance.BuildBossOne ();
-
-			//Factory.Instance.PhaseTwo ();
-			//Factory.Instance.BuildEnemy (5, SwinGame.ScreenWidth() + 50, 200, -5, 0);
-
-
 		}
 
 		public void HandleInput () 

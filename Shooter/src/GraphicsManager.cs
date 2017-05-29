@@ -70,8 +70,16 @@ namespace MyGame
 		}
 
 
-		public static GraphicsManager Instance {
-			get { return _instance; }
+		public static GraphicsManager Instance 
+		{
+			get 
+			{
+				if (_instance == null) 
+				{
+					_instance = new GraphicsManager ();
+				}
+				return _instance;
+			}
 		}
 
 	}

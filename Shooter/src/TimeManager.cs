@@ -78,7 +78,13 @@ namespace MyGame
 
 		public static TimeManager Instance 
 		{
-			get { return _instance; }
+			get 
+			{
+				if (_instance == null) {
+					_instance = new TimeManager ();
+				}
+				return _instance;
+			}
 		}
 	}
 }

@@ -46,8 +46,16 @@ namespace MyGame
 			MemoryManager.Instance.AddBullet(new Bullet (x, y, deltaX, deltaY, radius, clr, align));
 		}
 
-		public static Factory Instance {
-			get { return _instance; }
+		public static Factory Instance 
+		{
+			get 
+			{
+				if (_instance == null) 
+				{
+					_instance = new Factory ();
+				}	
+				return _instance; 
+			}
 		}
 
 

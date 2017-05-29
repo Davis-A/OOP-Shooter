@@ -88,7 +88,14 @@ namespace MyGame
 
 		public static PhysicsManager Instance 
 		{
-			get { return _instance; }
+			get 
+			{
+				if (_instance == null) 
+				{
+					_instance = new PhysicsManager ();
+				}
+				return _instance; 
+			}
 		}
 	}
 }

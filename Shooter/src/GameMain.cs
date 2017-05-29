@@ -12,7 +12,7 @@ namespace MyGame
 			GameManager game = new GameManager ();
 			//Open the game window
 			SwinGame.OpenGraphicsWindow("GameMain", 800, 600);  //does this below in GameManager.Init() ?
-			game.Init ();
+			//game.Init ();
 
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) 
