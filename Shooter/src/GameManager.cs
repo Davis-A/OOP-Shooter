@@ -55,6 +55,13 @@ namespace MyGame
 					SwinGame.ProcessEvents ();
 				}
 			}
+
+			//reset game:
+			if (SwinGame.KeyTyped (KeyCode.NKey)) 
+			{
+				ResetGame ();	
+			}
+
 			//bonus lives cheat
 			if (SwinGame.KeyTyped (KeyCode.RightCtrlKey)) 
 			{

@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Factory.cs">
     <Files>
       <File FileName="src\Phase.cs" Line="5" Column="3" />
       <File FileName="src\StandardPhase.cs" Line="35" Column="62" />
@@ -13,7 +13,11 @@
       <File FileName="src\Player.cs" Line="51" Column="26" />
       <File FileName="src\GameManager.cs" Line="10" Column="4" />
       <File FileName="src\MemoryManager.cs" Line="49" Column="5" />
-      <File FileName="src\GameMain.cs" Line="9" Column="34" />
+      <File FileName="src\GameMain.cs" Line="14" Column="4" />
+      <File FileName="src\TimeManager.cs" Line="36" Column="70" />
+      <File FileName="src\GraphicsManager.cs" Line="55" Column="4" />
+      <File FileName="src\DeltaMovement.cs" Line="1" Column="1" />
+      <File FileName="src\Factory.cs" Line="12" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

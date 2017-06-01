@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using SwinGameSDK;
+using System.IO;
 
 namespace MyGame
 {
     public class GameMain
     {
-		public static bool DEBUG = true;
+		public static bool DEBUG = false;
 		public static void Main()
         {
+			Console.WriteLine(Directory.GetCurrentDirectory ());
+
 			GameManager game = new GameManager ();
 			//Open the game window
 			SwinGame.OpenGraphicsWindow("GameMain", 800, 600);  //does this below in GameManager.Init() ?

@@ -60,13 +60,12 @@ namespace MyGame
 			float offset = 0;
 			int i = 1;
 
-			while (i <= MemoryManager.Instance.Player.HP) 
+			while (i <= MemoryManager.Instance.Player.HP && i <=10) 
 			{
 				i++;
 				SwinGame.FillTriangle (SwinGame.ColorGreen (), 30 + offset, SwinGame.ScreenHeight () - 25, 20 + offset, SwinGame.ScreenHeight () - 5, 40 + offset, SwinGame.ScreenHeight () - 5);
 				offset = offset + 22;
 			}
-
 		}
 
 
