@@ -72,7 +72,6 @@
     <Compile Include="src\BossTwo.cs" />
     <Compile Include="src\BossTwoPhase.cs" />
     <Compile Include="src\WeaponContainer.cs" />
-    <Compile Include="src\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

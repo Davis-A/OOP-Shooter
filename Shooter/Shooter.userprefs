@@ -4,7 +4,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Factory.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="src\WeaponContainer.cs" Line="36" Column="49" />
       <File FileName="src\UpdateableObject.cs" Line="18" Column="21" />
@@ -14,10 +14,7 @@
       <File FileName="src\GameMain.cs" Line="10" Column="34" />
       <File FileName="src\BossTwo.cs" Line="28" Column="4" />
       <File FileName="src\Enemy.cs" Line="18" Column="5" />
-      <File FileName="src\SoundManager.cs" Line="10" Column="4" />
-      <File FileName="src\TimeManager.cs" Line="11" Column="11" NotebookId="1" />
-      <File FileName="src\Factory.cs" Line="15" Column="4" NotebookId="1" />
-      <File FileName="src\MemoryManager.cs" Line="26" Column="26" NotebookId="1" />
+      <File FileName="src\SoundManager.cs" Line="8" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />
