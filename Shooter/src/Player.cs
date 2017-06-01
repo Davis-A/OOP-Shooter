@@ -55,6 +55,7 @@ namespace MyGame
 		public Weapon Weapon 
 		{
 			get { return _weapon; }
+			set { _weapon = value; }
 		}
 
 		public float Speed 

@@ -7,13 +7,15 @@ namespace MyGame
 		private Color _colour;
 		private int _radius;
 		private float _speed;
+		private string _name;
 
 
-		public Weapon (Color color, int radius, int speed)
+		public Weapon (Color color, int radius, int speed, string name)
 		{
 			_colour = color;
 			_radius = radius;
 			_speed = speed;
+			_name = name;
 		}
 
 		public abstract void Shoot (float x, float y, Alignment align);
@@ -32,6 +34,11 @@ namespace MyGame
 		public float Speed 
 		{
 			get { return _speed; }
+		}
+
+		public string Name 
+		{
+			get { return _name; }
 		}
 
 

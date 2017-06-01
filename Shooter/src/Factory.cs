@@ -26,7 +26,7 @@ namespace MyGame
 
 		public void BuildBossTwo () 
 		{
-			MemoryManager.Instance.AddEnemy (new BossTwo (5, SwinGame.LoadBitmap (@"sprites\BossTwo.png"), SwinGame.ScreenWidth () - 200, SwinGame.ScreenHeight () + 200, 0, 5));
+			MemoryManager.Instance.AddEnemy (new BossTwo (5, SwinGame.LoadBitmap (@"sprites\BossTwo.png"), SwinGame.ScreenWidth () - 200, SwinGame.ScreenHeight () + 200, 0, -5));
 		}
 
 		public void BuildDrone (int hp, float x, float y, List<DeltaMovement> deltaMovement)
@@ -37,6 +37,7 @@ namespace MyGame
 
 		public Player BuildPlayer () 
 		{
+			//MemoryManager.Instance.AddPlayer (new Player (5, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ()));
 			return new Player (5, SwinGame.LoadBitmap (@"sprites\F5S4-small.png"), 50f, 50f, new BigGun ());
 		}
 
@@ -44,6 +45,11 @@ namespace MyGame
 		{
 			//(float x, float y, float deltaX, float deltaY, int radius, Color clr)
 			MemoryManager.Instance.AddBullet(new Bullet (x, y, deltaX, deltaY, radius, clr, align));
+		}
+
+		public void BuildWeaponContainer (Weapon w, float x, float y, float deltaX, float deltaY) 
+		{
+			MemoryManager.Instance.AddWeaponContainer (new WeaponContainer (w, x, y, deltaY, deltaY));
 		}
 
 		public static Factory Instance 

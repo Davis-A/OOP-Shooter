@@ -2,7 +2,7 @@
 using SwinGameSDK;
 namespace MyGame
 {
-	public abstract class MoveableObject : Collidable, Renderable
+	public abstract class UpdateableObject : Collidable, Renderable
 	{
 		private float _x;
 		private float _y;
@@ -10,7 +10,7 @@ namespace MyGame
 		private float _deltaY;
 		private Rectangle _collisionBox;
 
-		public MoveableObject (float x,float y,float deltaX,float deltaY, Rectangle collisionBox)
+		public UpdateableObject (float x,float y,float deltaX,float deltaY, Rectangle collisionBox)
 		{
 			_x = x;
 			_y = y;

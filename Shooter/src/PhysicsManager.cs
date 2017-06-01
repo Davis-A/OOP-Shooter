@@ -83,6 +83,21 @@ namespace MyGame
 				}
 
 			}
+
+			PlayerWeaponContainerCollisionCheck ();
+
+		}
+
+		public void PlayerWeaponContainerCollisionCheck () 
+		{
+			//check if player collides with a weapon container
+			foreach (WeaponContainer wc in MemoryManager.Instance.WeaponContainers) 
+			{
+				if (SwinGame.RectanglesIntersect (MemoryManager.Instance.Player.CollisionBox, wc.CollisionBox)) 
+				{
+					MemoryManager.Instance.Player.Weapon = wc.Weapon;
+				}
+			}
 		}
 
 

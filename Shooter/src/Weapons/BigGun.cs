@@ -4,7 +4,7 @@ namespace MyGame
 {
 	public class BigGun : Weapon
 	{
-		public BigGun () : base(SwinGame.ColorRed(), 50, 10)
+		public BigGun () : base(SwinGame.ColorRed(), 50, 10, "Big Gun")
 		{
 		}
 

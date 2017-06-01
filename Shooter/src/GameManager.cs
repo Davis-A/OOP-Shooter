@@ -74,27 +74,37 @@ namespace MyGame
 		public void Update () 
 		{
 			TimeManager.Instance.TimeRun ();
-			//update player
-			MemoryManager.Instance.Player.Update ();
-			//update enemies
-			foreach (Enemy e in MemoryManager.Instance.Enemies) 
-			{
-				e.Update ();
-			}
-			//update bullets
 
-			foreach (Bullet b in MemoryManager.Instance.Bullets) 
+			//These are iterated over backwards.  Because it's possible for some enemies to shoot and thus add items to the updateables list as it is being iterated over
+			for (int i = MemoryManager.Instance.Updateables.Count - 1; i >= 0; i--) 
 			{
-				b.Update ();
+				MemoryManager.Instance.Updateables [i].Update ();
 			}
 
-			PhysicsManager.Instance.CollisionHandler ();
+				PhysicsManager.Instance.CollisionHandler ();
 
 
+			ObjectExperation ();
+		}
+
+		private void ObjectExperation () 
+		{
 			//outside area despawn
 			IsBulletsOutOfBounds ();
 			IsEnemyOutOfBounds ();
 			CheckPlayerIsAlive ();
+			CheckWeaponContainerLifetime ();
+		}
+
+		private void CheckWeaponContainerLifetime () 
+		{
+			for (int i = MemoryManager.Instance.WeaponContainers.Count - 1; i >= 0; i--) 
+			{
+				if (MemoryManager.Instance.WeaponContainers [i].Lifespan < 1) 
+				{
+					MemoryManager.Instance.DespawnWeaponContainer (MemoryManager.Instance.WeaponContainers [i]);
+				}
+			}
 		}
 
 		private void CheckPlayerIsAlive () 

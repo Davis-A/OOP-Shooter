@@ -20,7 +20,7 @@ namespace MyGame
 			}
 		}
 
-		private void GeneratePhase () 
+		private void GeneratePhase ()
 		{
 			_phases.Add (new StandardPhase (50, @"Resources\Phases\phase1.csv"));
 			_phases.Add (new StandardPhase (50, @"Resources\Phases\phase1.csv"));

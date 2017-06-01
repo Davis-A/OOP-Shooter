@@ -31,13 +31,13 @@ namespace MyGame
 			SwinGame.ClearScreen (Color.Black);
 			SwinGame.DrawBitmap (_background, 0, 0);
 
-			foreach (Renderable r in MemoryManager.Instance.Renderable) 
+			foreach (Renderable r in MemoryManager.Instance.Updateables) 
 			{
 				r.Render ();
 			}
 
 			RenderHUD ();
-			//Player is not included in renderable list because i always want it rendering after enemies and bullets.
+			//Player is always rendered again to ensure it is on top of all other renderable items
 			MemoryManager.Instance.Player.Render ();
 			//draw the framerate
 			SwinGame.DrawFramerate (0, 0);

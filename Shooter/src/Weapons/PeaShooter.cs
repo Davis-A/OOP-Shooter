@@ -5,7 +5,7 @@ namespace MyGame
 {
 	public class PeaShooter : Weapon
 	{
-		public PeaShooter () : base (SwinGame.ColorBlue(), 20, 10)
+		public PeaShooter () : base (SwinGame.ColorBlue(), 20, 10, "Pea Shooter")
 		{
 		}
 

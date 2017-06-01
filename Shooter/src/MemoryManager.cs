@@ -17,46 +17,41 @@ namespace MyGame
 		private List<Bullet> _bullets;
 		private List<Enemy> _enemies;
 		private Player _player;
-		private List<Renderable> _renderables;
+		private List<UpdateableObject> _updateables;
+		private List<WeaponContainer> _weaponContainers;
 
 
 		public MemoryManager ()
 		{
-			if (_instance == null) 
-			{
+			if (_instance == null) {
 				ResetMemoryManager ();
 				_instance = this;
-			}
-			else 
-			{
-				throw new Exception ("cannot have more than one instance of Time Manager");
+			} else {
+				throw new Exception ("cannot have more than one instance of Memory Manager");
 			}
 		}
 
-		public void ResetMemoryManager () 
+		public void ResetMemoryManager ()
 		{
 			_enemies = new List<Enemy> ();
 			_bullets = new List<Bullet> ();
-			_renderables = new List<Renderable> ();
+			_updateables = new List<UpdateableObject> ();
+			_weaponContainers = new List<WeaponContainer> ();
 			//create player
-			_player = Factory.Instance.BuildPlayer ();
+			AddPlayer (Factory.Instance.BuildPlayer ());
 		}
 
 
-		public static MemoryManager Instance 
-		{
-			get 
-			{
-				if (_instance == null) 
-				{
+		public static MemoryManager Instance {
+			get {
+				if (_instance == null) {
 					_instance = new MemoryManager ();
 				}
 				return _instance;
 			}
 		}
 
-		public List<Bullet> Bullets 
-		{
+		public List<Bullet> Bullets {
 			get { return _bullets; }
 		}
 
@@ -64,42 +59,66 @@ namespace MyGame
 		public void AddBullet (Bullet b)
 		{
 			_bullets.Add (b);
-			_renderables.Add (b);
+			_updateables.Add (b);
 		}
 
-		public void DespawnBullet (Bullet b) 
+		public void DespawnBullet (Bullet b)
 		{
 			_bullets.Remove (b);
-			_renderables.Remove (b);
+			_updateables.Remove (b);
 		}
 
-		public List<Enemy> Enemies 
-		{
+		public List<Enemy> Enemies {
 			get { return _enemies; }
 		}
 
-		public void DespawnEnemy (Enemy e) 
+		public void DespawnEnemy (Enemy e)
 		{
 			_enemies.Remove (e);
-			_renderables.Remove (e);
+			_updateables.Remove (e);
 		}
 
 		//using a method.  I don't what anything other than the world being able to do things with the enemy list.  When it comes to rendering i will have GameManager create a list of every Game object 
 		public void AddEnemy (Enemy e)
 		{
 			_enemies.Add (e);
-			_renderables.Add (e);
+			_updateables.Add (e);
 		}
+
+		public void AddPlayer (Player p)
+		{
+			_player = p;
+			_updateables.Add (p);
+		}
+
+		public void AddWeaponContainer (WeaponContainer wc)
+		{
+			_weaponContainers.Add (wc);
+			_updateables.Add (wc);
+		}
+
+		public void DespawnWeaponContainer (WeaponContainer wc) 
+		{
+			_weaponContainers.Remove (wc);
+			_updateables.Remove (wc);
+		}
+
+		public List<WeaponContainer> WeaponContainers 
+		{
+			get { return _weaponContainers; }
+		}
+
 
 		public Player Player 
 		{
 			get { return _player; }
 		}
 
-		public List<Renderable> Renderable 
+		public List<UpdateableObject> Updateables 
 		{
-			get { return _renderables; }
+			get { return _updateables; }
 		}
+
 
 	}
 }

@@ -2,7 +2,7 @@
 using SwinGameSDK;
 namespace MyGame
 {
-	public abstract class Ship : MoveableObject
+	public abstract class Ship : UpdateableObject
 	{
 		private int _hp;
 		private Bitmap _sprite;

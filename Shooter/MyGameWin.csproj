@@ -45,7 +45,7 @@
     <Compile Include="src\GameMain.cs" />
     <Compile Include="src\Ship.cs" />
     <Compile Include="src\Player.cs" />
-    <Compile Include="src\MoveableObject.cs" />
+    <Compile Include="src\UpdateableObject.cs" />
     <Compile Include="src\Bullet.cs" />
     <Compile Include="src\Weapons\Weapon.cs" />
     <Compile Include="src\Weapons\PeaShooter.cs" />
@@ -71,6 +71,7 @@
     <Compile Include="src\waitPhase.cs" />
     <Compile Include="src\BossTwo.cs" />
     <Compile Include="src\BossTwoPhase.cs" />
+    <Compile Include="src\WeaponContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

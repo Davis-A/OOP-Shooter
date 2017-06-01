@@ -29,8 +29,20 @@ namespace MyGame
 			base.Update ();
 		}
 
+
+		public override void HasCollided ()
+		{
+			base.HasCollided ();
+
+			if (HP < 1) 
+			{
+				Factory.Instance.BuildWeaponContainer (_weapon, X, Y, 0, 0);
+			}
+		}
+
 		private void Shoot () 
 		{
+			
 			_shootcounter--;
 			if (_shootcounter == 0) 
 			{
