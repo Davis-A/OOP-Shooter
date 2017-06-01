@@ -9,18 +9,8 @@ namespace MyGame
 		private static PhysicsManager _instance;
 
 
-		public PhysicsManager ()
+		private PhysicsManager ()
 		{
-			if (_instance == null) 
-			{
-				// NORMAL CONSTRUCTOR
-				// Set up singleton
-				_instance = this;
-			} 
-			else 
-			{
-				throw new Exception ("cannot have more than one instance of Physics Manager");
-			}
 		}
 
 

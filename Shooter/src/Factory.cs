@@ -8,15 +8,9 @@ namespace MyGame
 		private static Factory _instance;
 		private Bitmap _dronebitmap;
 
-		public Factory ()
+		private Factory ()
 		{
-			if (_instance == null) {
-				//load enemy bitmap
-				_dronebitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
-				_instance = this;
-			} else {
-				throw new Exception ("cannot have more than one instance of factory");
-			}
+			_dronebitmap = SwinGame.LoadBitmap (@"sprites\enemy.png");
 		}
 
 		public void BuildBossOne () 

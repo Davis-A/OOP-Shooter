@@ -8,16 +8,10 @@ namespace MyGame
 	{
 		private static TimeManager _instance;
 		private List<Phase> _phases;
-		public TimeManager ()
+		private TimeManager ()
 		{
-			if (_instance == null) {
-				_phases =  new List<Phase>();
-				GeneratePhase ();
-				_instance = this;
-			} else 
-			{
-				throw new Exception ("cannot have more than one instance of Time Manager");
-			}
+			_phases = new List<Phase> ();
+			ResetTimeManager ();
 		}
 
 		private void GeneratePhase ()

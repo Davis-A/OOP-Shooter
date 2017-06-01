@@ -9,15 +9,15 @@
       <File FileName="src\WeaponContainer.cs" Line="36" Column="49" />
       <File FileName="src\UpdateableObject.cs" Line="18" Column="21" />
       <File FileName="src\Bullet.cs" Line="31" Column="5" />
-      <File FileName="src\TimeManager.cs" Line="24" Column="4" />
-      <File FileName="src\MemoryManager.cs" Line="108" Column="35" />
-      <File FileName="src\GameManager.cs" Line="114" Column="36" />
-      <File FileName="src\PhysicsManager.cs" Line="92" Column="4" />
+      <File FileName="src\GameManager.cs" Line="78" Column="161" />
       <File FileName="src\Player.cs" Line="58" Column="26" />
       <File FileName="src\GameMain.cs" Line="10" Column="34" />
-      <File FileName="src\BossTwo.cs" Line="32" Column="5" />
-      <File FileName="src\Enemy.cs" Line="15" Column="15" />
-      <File FileName="src\Factory.cs" Line="50" Column="17" />
+      <File FileName="src\BossTwo.cs" Line="28" Column="4" />
+      <File FileName="src\Enemy.cs" Line="18" Column="5" />
+      <File FileName="src\SoundManager.cs" Line="10" Column="4" />
+      <File FileName="src\TimeManager.cs" Line="11" Column="11" NotebookId="1" />
+      <File FileName="src\Factory.cs" Line="15" Column="4" NotebookId="1" />
+      <File FileName="src\MemoryManager.cs" Line="26" Column="26" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.MyGameWin PreferredExecutionTarget="MonoDevelop.Default" />

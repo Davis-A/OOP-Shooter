@@ -9,17 +9,9 @@ namespace MyGame
 		private static GraphicsManager _instance;
 		private Bitmap _background;
 
-		public GraphicsManager ()
+		private GraphicsManager ()
 		{
-			if (_instance == null) 
-			{
-				_background = SwinGame.LoadBitmap (@"background.jpg");
-				_instance = this;
-			} 
-			else 
-			{
-				throw new Exception ("cannot have more than one instance of GraphicsManager");
-			}
+			_background = SwinGame.LoadBitmap (@"background.jpg");
 		}
 
 

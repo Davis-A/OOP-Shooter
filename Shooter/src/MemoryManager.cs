@@ -21,14 +21,9 @@ namespace MyGame
 		private List<WeaponContainer> _weaponContainers;
 
 
-		public MemoryManager ()
+		private MemoryManager ()
 		{
-			if (_instance == null) {
-				ResetMemoryManager ();
-				_instance = this;
-			} else {
-				throw new Exception ("cannot have more than one instance of Memory Manager");
-			}
+			ResetMemoryManager ();
 		}
 
 		public void ResetMemoryManager ()
